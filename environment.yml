@@ -1,0 +1,47 @@
+name: akcb
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python
+  - python=3.10
+
+  # Core ML/DL frameworks
+  - pytorch>=2.0.0
+  - pytorch-cuda=11.8
+  - cudatoolkit=11.8
+  
+  # Essential packages
+  - numpy>=1.24.0
+  - tqdm
+  
+  # Pip packages
+  - pip
+  - pip:
+      # Transformers and HuggingFace ecosystem
+      - transformers>=4.35.0
+      - datasets>=2.14.0
+      - accelerate>=0.24.0
+      - tokenizers>=0.14.0
+      
+      # Evaluation frameworks
+      - lm-eval>=0.4.0
+      
+      # Metrics and evaluation
+      - rouge>=1.0.1
+      - jieba>=0.42.1
+      - fuzzywuzzy>=0.18.0
+      - python-Levenshtein>=0.21.0
+      
+      # Utilities
+      - sentencepiece>=0.1.99
+      - protobuf>=3.20.0
+      
+      # Optional: Flash Attention for faster inference (requires compatible GPU)
+      # - flash-attn>=2.3.0
+      
+      # Optional: Quantization support
+      # - bitsandbytes>=0.41.0
