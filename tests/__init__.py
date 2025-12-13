@@ -1,3 +1,0 @@
-"""
-AKCB Test Suite
-"""
