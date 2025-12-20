@@ -1,0 +1,82 @@
+{
+  "meta-llama/Llama-3.1-8B-Instruct": {
+    "hypers": [
+      {
+        "cache_size": 1024,
+        "window_size": 32,
+        "tau1": 0.1,
+        "tau2": 0.3,
+        "tau3": 0.6,
+        "gamma": 0.8
+      },
+      {
+        "cache_size": 2048,
+        "window_size": 32,
+        "tau1": 0.1,
+        "tau2": 0.3,
+        "tau3": 0.6,
+        "gamma": 0.8
+      }
+    ]
+  },
+  "meta-llama/Llama-3.2-3B-Instruct": {
+    "hypers": [
+      {
+        "cache_size": 512,
+        "window_size": 32,
+        "tau1": 0.1,
+        "tau2": 0.3,
+        "tau3": 0.6,
+        "gamma": 0.8
+      },
+      {
+        "cache_size": 1024,
+        "window_size": 32,
+        "tau1": 0.1,
+        "tau2": 0.3,
+        "tau3": 0.6,
+        "gamma": 0.8
+      }
+    ]
+  },
+  "Qwen/Qwen2.5-4B-Instruct": {
+    "hypers": [
+      {
+        "cache_size": 512,
+        "window_size": 32,
+        "tau1": 0.1,
+        "tau2": 0.3,
+        "tau3": 0.6,
+        "gamma": 0.8
+      },
+      {
+        "cache_size": 1024,
+        "window_size": 32,
+        "tau1": 0.1,
+        "tau2": 0.3,
+        "tau3": 0.6,
+        "gamma": 0.8
+      }
+    ]
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+    "hypers": [
+      {
+        "cache_size": 1024,
+        "window_size": 32,
+        "tau1": 0.1,
+        "tau2": 0.3,
+        "tau3": 0.6,
+        "gamma": 0.8
+      },
+      {
+        "cache_size": 2048,
+        "window_size": 32,
+        "tau1": 0.1,
+        "tau2": 0.3,
+        "tau3": 0.6,
+        "gamma": 0.8
+      }
+    ]
+  }
+}

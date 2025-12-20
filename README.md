@@ -15,7 +15,7 @@ Large Language Models (LLMs) are increasingly deployed in scenarios demanding ul
 
 # Dependencies
 
-> Notion：The dependencies come from `pyproject.toml` and `environment.yml`. Where `>=` means the minimum required version; the exact version installed in your environment may be higher.
+> Note: Dependencies are defined in `environment.yml`. Where `>=` means the minimum required version; the exact version installed in your environment may be higher.
 
 | Name | Version | Purpose |
 |------|---------|---------|
@@ -31,37 +31,55 @@ Large Language Models (LLMs) are increasingly deployed in scenarios demanding ul
 | `tqdm` | (un-pinned) | Progress bars |
 | `sentencepiece` | `>=0.1.99` | Tokenizer model support |
 | `protobuf` | `>=3.20.0` | Serialization dependency (Transformers ecosystem) |
-| `lm-eval` | `>=0.4.0` | (Optional, `.[eval]`) evaluation harness |
-| `rouge` | `>=1.0.1` | (Optional, `.[eval]`) ROUGE metric |
-| `jieba` | `>=0.42.1` | (Optional, `.[eval]`) Chinese tokenization (some eval pipelines) |
-| `fuzzywuzzy` | `>=0.18.0` | (Optional, `.[eval]`) fuzzy string matching |
-| `python-Levenshtein` | `>=0.21.0` | (Optional, `.[eval]`) fast edit distance |
-| `flash-attn` | `>=2.3.0` | (Optional, `.[flash]`) FlashAttention acceleration |
-| `bitsandbytes` | `>=0.41.0` | (Optional, `.[quant]`) quantization backend |
-| `pytest` | `>=8.0.0` | (Optional, `.[dev]`) testing |
-| `black` | `>=23.0.0` | (Optional, `.[dev]`) formatting |
-| `isort` | `>=5.12.0` | (Optional, `.[dev]`) import sorting |
-| `flake8` | `>=6.0.0` | (Optional, `.[dev]`) linting |
+| `lm-eval` | `>=0.4.0` | (Optional) evaluation harness |
+| `rouge` | `>=1.0.1` | (Optional) ROUGE metric |
+| `jieba` | `>=0.42.1` | (Optional) Chinese tokenization (some eval pipelines) |
+| `fuzzywuzzy` | `>=0.18.0` | (Optional) fuzzy string matching |
+| `python-Levenshtein` | `>=0.21.0` | (Optional) fast edit distance |
+| `flash-attn` | `>=2.3.0` | (Optional) FlashAttention acceleration |
+| `bitsandbytes` | `>=0.41.0` | (Optional) quantization backend |
+| `pytest` | `>=8.0.0` | (Optional) testing |
+| `black` | `>=23.0.0` | (Optional) formatting |
+| `isort` | `>=5.12.0` | (Optional) import sorting |
+| `flake8` | `>=6.0.0` | (Optional) linting |
+
+# Environment Setup
+
+The recommended way to set up a runnable environment is to use the provided setup script, which:
+
+1. Creates/updates a conda environment from `environment.yml` (or another env spec you provide), and
+2. Installs this repo in editable mode via `pip install -e .`.
+
+## Quick start (recommended)
+
+```bash
+./scripts/setup_env.sh
+conda activate akcb
+```
+
+## Using an exported env spec (optional)
+
+If you generated a conda export (for example, `conda env export --no-builds > env.txt`), you can
+use it directly:
+
+```bash
+./scripts/setup_env.sh --file env.txt
+```
+
+If the export uses a different environment name (e.g., `name: adkv`) but you want to create/update
+the `akcb` environment, pass `--name`:
+
+```bash
+./scripts/setup_env.sh --file env.txt --name akcb
+```
+
+Note: conda exports sometimes include a machine-specific `prefix:` entry. The setup script strips
+that line automatically to keep the environment spec portable.
 
 # Repository Structure
 
-This repository is organized around the AKCB runtime pipeline (config → attention patching → prefill scoring → decoding compression).
+This repository is organized around the AKCB runtime pipeline (config → attention patching → prefill scoring → decoding compression), plus an experiments folder for evaluation and analysis.
 
-```text
-AKCB/
-  akcb/
-    cache/
-      adaptive_cache.py
-      origin_cache.py
-      window_cache.py
-      quant_cache.py
-      mix_cache.py
-    model/
-      modle_llama.py
-      modify_qwen3.py
-    calculator.py
-    config.py
-```
 
 ## Core package: `akcb/`
 
@@ -89,7 +107,49 @@ AKCB/
 	- `modle_llama.py`: patches Llama attention forward to run AKCB logic (prefill scoring + decoding compression) while staying API-compatible with Transformers.
 	- `modify_qwen3.py`: analogous patch for Qwen3.
 
-## Environment and packaging
+## Experiments: `experiments/`
 
-- `environment.yml`: conda environment (Python 3.10, PyTorch + CUDA 11.8, and pip deps).
+The `experiments/` directory contains scripts and notebooks used to reproduce evaluation and analysis.
+
+- `experiments/eval/`
+	- `eval.py`: evaluation script built on lm-eval, with telemetry (tokens/s) and cache-related logging.
+	- `train.py`: Optuna-based hyperparameter tuning for `tau1/tau2/tau3/gamma`.
+	- `config/`: hyperparameter presets (e.g., `hypers.json`).
+
+- `experiments/analysis/`
+	- Jupyter notebooks for aggregating and plotting results.
+	- `data/`: CSV outputs used by notebooks.
+
+- `experiments/LongBench/`
+	- LongBench evaluation utilities (`eval.py`, `pred.py`, `metrics.py`) and dataset-specific configs.
+
+### Run examples
+
+After environment setup:
+
+```bash
+conda activate akcb
+```
+
+Run lm-eval evaluation (example):
+
+```bash
+python experiments/eval/eval.py \
+	--tasks gsm8k,mmlu,commonsense_qa \
+	--quant_type mix \
+	--sampling_ratio 0.2 \
+	--outdir tps_results
+```
+
+Run Optuna tuning (example):
+
+```bash
+python experiments/eval/train.py \
+	--tasks gsm8k,mmlu,commonsense_qa,longbench \
+	--limit 10 \
+	--n_trials 10 \
+	--cache_size 1024
+```
+
+
 

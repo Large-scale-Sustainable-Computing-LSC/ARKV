@@ -1,0 +1,841 @@
+model,method,budget,task,Task Type,Eval metric,Avg len,Language,performance
+Llama-3.2-3B-Instruct,Base,,NarrativeQA,Single-doc QA,F1,18409,EN,25.5
+Llama-3.2-3B-Instruct,Base,,Qasper,Single-doc QA,F1,3619,EN,39.52
+Llama-3.2-3B-Instruct,Base,,MultiFieldQA-en,Single-doc QA,F1,4559,EN,51.15
+Llama-3.2-3B-Instruct,Base,,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,25.36
+Llama-3.2-3B-Instruct,Base,,HotpotQA,Multi-doc QA,F1,9151,EN,31.81
+Llama-3.2-3B-Instruct,Base,,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,28.36
+Llama-3.2-3B-Instruct,Base,,MuSiQue,Multi-doc QA,F1,11214,EN,14.77
+Llama-3.2-3B-Instruct,Base,,DuReader,Multi-doc QA,Rouge-L,15768,ZH,28.73
+Llama-3.2-3B-Instruct,Base,,GovReport,Summarization,Rouge-L,8734,EN,33.35
+Llama-3.2-3B-Instruct,Base,,QMSum,Summarization,Rouge-L,10614,EN,23.13
+Llama-3.2-3B-Instruct,Base,,MultiNews,Summarization,Rouge-L,2113,EN,25.19
+Llama-3.2-3B-Instruct,Base,,VCSUM,Summarization,Rouge-L,15380,ZH,15.19
+Llama-3.2-3B-Instruct,Base,,TREC,Few shot,Accuracy,5177,EN,72.5
+Llama-3.2-3B-Instruct,Base,,TriviaQA,Few shot,F1,8209,EN,88.78
+Llama-3.2-3B-Instruct,Base,,SAMSum,Few shot,Rouge-L,6258,EN,42.47
+Llama-3.2-3B-Instruct,Base,,LSHT,Few shot,Accuracy,22337,ZH,33.5
+Llama-3.2-3B-Instruct,Base,,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,Base,,PassageRetr.-en,Synthetic,Accuracy,9289,EN,88.0
+Llama-3.2-3B-Instruct,Base,,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,30.5
+Llama-3.2-3B-Instruct,Base,,LCC,Code,Edit Sim,1235,Python/C#/Java,53.81
+Llama-3.2-3B-Instruct,Base,,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.75
+Llama-3.2-3B-Instruct,AKCB,512,NarrativeQA,Single-doc QA,F1,18409,EN,25.42
+Llama-3.2-3B-Instruct,AKCB,512,Qasper,Single-doc QA,F1,3619,EN,36.03
+Llama-3.2-3B-Instruct,AKCB,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,47.34
+Llama-3.2-3B-Instruct,AKCB,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,24.74
+Llama-3.2-3B-Instruct,AKCB,512,HotpotQA,Multi-doc QA,F1,9151,EN,26.74
+Llama-3.2-3B-Instruct,AKCB,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,27.33
+Llama-3.2-3B-Instruct,AKCB,512,MuSiQue,Multi-doc QA,F1,11214,EN,15.23
+Llama-3.2-3B-Instruct,AKCB,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,24.5
+Llama-3.2-3B-Instruct,AKCB,512,GovReport,Summarization,Rouge-L,8734,EN,24.51
+Llama-3.2-3B-Instruct,AKCB,512,QMSum,Summarization,Rouge-L,10614,EN,21.15
+Llama-3.2-3B-Instruct,AKCB,512,MultiNews,Summarization,Rouge-L,2113,EN,22.82
+Llama-3.2-3B-Instruct,AKCB,512,VCSUM,Summarization,Rouge-L,15380,ZH,12.65
+Llama-3.2-3B-Instruct,AKCB,512,TREC,Few shot,Accuracy,5177,EN,72.0
+Llama-3.2-3B-Instruct,AKCB,512,TriviaQA,Few shot,F1,8209,EN,88.67
+Llama-3.2-3B-Instruct,AKCB,512,SAMSum,Few shot,Rouge-L,6258,EN,42.53
+Llama-3.2-3B-Instruct,AKCB,512,LSHT,Few shot,Accuracy,22337,ZH,33.5
+Llama-3.2-3B-Instruct,AKCB,512,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,AKCB,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,88.33
+Llama-3.2-3B-Instruct,AKCB,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,26.0
+Llama-3.2-3B-Instruct,AKCB,512,LCC,Code,Edit Sim,1235,Python/C#/Java,53.86
+Llama-3.2-3B-Instruct,AKCB,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,54.26
+Llama-3.2-3B-Instruct,Quant,512,NarrativeQA,Single-doc QA,F1,18409,EN,5.88
+Llama-3.2-3B-Instruct,Quant,512,Qasper,Single-doc QA,F1,3619,EN,7.39
+Llama-3.2-3B-Instruct,Quant,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,7.22
+Llama-3.2-3B-Instruct,Quant,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,11.51
+Llama-3.2-3B-Instruct,Quant,512,HotpotQA,Multi-doc QA,F1,9151,EN,10.33
+Llama-3.2-3B-Instruct,Quant,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,8.16
+Llama-3.2-3B-Instruct,Quant,512,MuSiQue,Multi-doc QA,F1,11214,EN,3.93
+Llama-3.2-3B-Instruct,Quant,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,7.38
+Llama-3.2-3B-Instruct,Quant,512,GovReport,Summarization,Rouge-L,8734,EN,3.2
+Llama-3.2-3B-Instruct,Quant,512,QMSum,Summarization,Rouge-L,10614,EN,10.65
+Llama-3.2-3B-Instruct,Quant,512,MultiNews,Summarization,Rouge-L,2113,EN,2.7
+Llama-3.2-3B-Instruct,Quant,512,VCSUM,Summarization,Rouge-L,15380,ZH,2.47
+Llama-3.2-3B-Instruct,Quant,512,TREC,Few shot,Accuracy,5177,EN,48.0
+Llama-3.2-3B-Instruct,Quant,512,TriviaQA,Few shot,F1,8209,EN,37.17
+Llama-3.2-3B-Instruct,Quant,512,SAMSum,Few shot,Rouge-L,6258,EN,13.09
+Llama-3.2-3B-Instruct,Quant,512,LSHT,Few shot,Accuracy,22337,ZH,17.5
+Llama-3.2-3B-Instruct,Quant,512,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,Quant,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,68.28
+Llama-3.2-3B-Instruct,Quant,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,3.5
+Llama-3.2-3B-Instruct,Quant,512,LCC,Code,Edit Sim,1235,Python/C#/Java,10.23
+Llama-3.2-3B-Instruct,Quant,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,12.61
+Llama-3.2-3B-Instruct,Origin,512,NarrativeQA,Single-doc QA,F1,18409,EN,25.85
+Llama-3.2-3B-Instruct,Origin,512,Qasper,Single-doc QA,F1,3619,EN,36.1
+Llama-3.2-3B-Instruct,Origin,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,50.0
+Llama-3.2-3B-Instruct,Origin,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,26.1
+Llama-3.2-3B-Instruct,Origin,512,HotpotQA,Multi-doc QA,F1,9151,EN,30.85
+Llama-3.2-3B-Instruct,Origin,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,26.07
+Llama-3.2-3B-Instruct,Origin,512,MuSiQue,Multi-doc QA,F1,11214,EN,13.6
+Llama-3.2-3B-Instruct,Origin,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,23.9
+Llama-3.2-3B-Instruct,Origin,512,GovReport,Summarization,Rouge-L,8734,EN,25.25
+Llama-3.2-3B-Instruct,Origin,512,QMSum,Summarization,Rouge-L,10614,EN,21.59
+Llama-3.2-3B-Instruct,Origin,512,MultiNews,Summarization,Rouge-L,2113,EN,23.52
+Llama-3.2-3B-Instruct,Origin,512,VCSUM,Summarization,Rouge-L,15380,ZH,13.44
+Llama-3.2-3B-Instruct,Origin,512,TREC,Few shot,Accuracy,5177,EN,72.0
+Llama-3.2-3B-Instruct,Origin,512,TriviaQA,Few shot,F1,8209,EN,88.78
+Llama-3.2-3B-Instruct,Origin,512,SAMSum,Few shot,Rouge-L,6258,EN,42.36
+Llama-3.2-3B-Instruct,Origin,512,LSHT,Few shot,Accuracy,22337,ZH,34.0
+Llama-3.2-3B-Instruct,Origin,512,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,Origin,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,87.83
+Llama-3.2-3B-Instruct,Origin,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,29.0
+Llama-3.2-3B-Instruct,Origin,512,LCC,Code,Edit Sim,1235,Python/C#/Java,54.25
+Llama-3.2-3B-Instruct,Origin,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,55.92
+Llama-3.2-3B-Instruct,AKCB,1024,NarrativeQA,Single-doc QA,F1,18409,EN,25.06
+Llama-3.2-3B-Instruct,AKCB,1024,Qasper,Single-doc QA,F1,3619,EN,37.41
+Llama-3.2-3B-Instruct,AKCB,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,48.23
+Llama-3.2-3B-Instruct,AKCB,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,26.43
+Llama-3.2-3B-Instruct,AKCB,1024,HotpotQA,Multi-doc QA,F1,9151,EN,30.47
+Llama-3.2-3B-Instruct,AKCB,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,27.91
+Llama-3.2-3B-Instruct,AKCB,1024,MuSiQue,Multi-doc QA,F1,11214,EN,14.59
+Llama-3.2-3B-Instruct,AKCB,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,24.67
+Llama-3.2-3B-Instruct,AKCB,1024,GovReport,Summarization,Rouge-L,8734,EN,26.26
+Llama-3.2-3B-Instruct,AKCB,1024,QMSum,Summarization,Rouge-L,10614,EN,21.78
+Llama-3.2-3B-Instruct,AKCB,1024,MultiNews,Summarization,Rouge-L,2113,EN,24.25
+Llama-3.2-3B-Instruct,AKCB,1024,VCSUM,Summarization,Rouge-L,15380,ZH,13.48
+Llama-3.2-3B-Instruct,AKCB,1024,TREC,Few shot,Accuracy,5177,EN,72.0
+Llama-3.2-3B-Instruct,AKCB,1024,TriviaQA,Few shot,F1,8209,EN,89.17
+Llama-3.2-3B-Instruct,AKCB,1024,SAMSum,Few shot,Rouge-L,6258,EN,42.55
+Llama-3.2-3B-Instruct,AKCB,1024,LSHT,Few shot,Accuracy,22337,ZH,33.5
+Llama-3.2-3B-Instruct,AKCB,1024,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,AKCB,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,89.33
+Llama-3.2-3B-Instruct,AKCB,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,27.5
+Llama-3.2-3B-Instruct,AKCB,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,54.14
+Llama-3.2-3B-Instruct,AKCB,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,55.73
+Llama-3.2-3B-Instruct,Quant,1024,NarrativeQA,Single-doc QA,F1,18409,EN,5.88
+Llama-3.2-3B-Instruct,Quant,1024,Qasper,Single-doc QA,F1,3619,EN,7.39
+Llama-3.2-3B-Instruct,Quant,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,7.22
+Llama-3.2-3B-Instruct,Quant,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,11.58
+Llama-3.2-3B-Instruct,Quant,1024,HotpotQA,Multi-doc QA,F1,9151,EN,10.33
+Llama-3.2-3B-Instruct,Quant,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,8.66
+Llama-3.2-3B-Instruct,Quant,1024,MuSiQue,Multi-doc QA,F1,11214,EN,3.93
+Llama-3.2-3B-Instruct,Quant,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,7.38
+Llama-3.2-3B-Instruct,Quant,1024,GovReport,Summarization,Rouge-L,8734,EN,3.18
+Llama-3.2-3B-Instruct,Quant,1024,QMSum,Summarization,Rouge-L,10614,EN,9.93
+Llama-3.2-3B-Instruct,Quant,1024,MultiNews,Summarization,Rouge-L,2113,EN,4.89
+Llama-3.2-3B-Instruct,Quant,1024,VCSUM,Summarization,Rouge-L,15380,ZH,2.11
+Llama-3.2-3B-Instruct,Quant,1024,TREC,Few shot,Accuracy,5177,EN,48.0
+Llama-3.2-3B-Instruct,Quant,1024,TriviaQA,Few shot,F1,8209,EN,37.17
+Llama-3.2-3B-Instruct,Quant,1024,SAMSum,Few shot,Rouge-L,6258,EN,13.09
+Llama-3.2-3B-Instruct,Quant,1024,LSHT,Few shot,Accuracy,22337,ZH,17.5
+Llama-3.2-3B-Instruct,Quant,1024,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,Quant,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,68.28
+Llama-3.2-3B-Instruct,Quant,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,3.5
+Llama-3.2-3B-Instruct,Quant,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,10.37
+Llama-3.2-3B-Instruct,Quant,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,12.61
+Llama-3.2-3B-Instruct,Origin,1024,NarrativeQA,Single-doc QA,F1,18409,EN,25.37
+Llama-3.2-3B-Instruct,Origin,1024,Qasper,Single-doc QA,F1,3619,EN,37.2
+Llama-3.2-3B-Instruct,Origin,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,50.47
+Llama-3.2-3B-Instruct,Origin,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,26.94
+Llama-3.2-3B-Instruct,Origin,1024,HotpotQA,Multi-doc QA,F1,9151,EN,29.96
+Llama-3.2-3B-Instruct,Origin,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,26.36
+Llama-3.2-3B-Instruct,Origin,1024,MuSiQue,Multi-doc QA,F1,11214,EN,13.91
+Llama-3.2-3B-Instruct,Origin,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,24.68
+Llama-3.2-3B-Instruct,Origin,1024,GovReport,Summarization,Rouge-L,8734,EN,26.91
+Llama-3.2-3B-Instruct,Origin,1024,QMSum,Summarization,Rouge-L,10614,EN,21.92
+Llama-3.2-3B-Instruct,Origin,1024,MultiNews,Summarization,Rouge-L,2113,EN,24.58
+Llama-3.2-3B-Instruct,Origin,1024,VCSUM,Summarization,Rouge-L,15380,ZH,13.94
+Llama-3.2-3B-Instruct,Origin,1024,TREC,Few shot,Accuracy,5177,EN,72.0
+Llama-3.2-3B-Instruct,Origin,1024,TriviaQA,Few shot,F1,8209,EN,89.11
+Llama-3.2-3B-Instruct,Origin,1024,SAMSum,Few shot,Rouge-L,6258,EN,42.36
+Llama-3.2-3B-Instruct,Origin,1024,LSHT,Few shot,Accuracy,22337,ZH,33.5
+Llama-3.2-3B-Instruct,Origin,1024,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,Origin,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,87.83
+Llama-3.2-3B-Instruct,Origin,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,29.0
+Llama-3.2-3B-Instruct,Origin,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,54.42
+Llama-3.2-3B-Instruct,Origin,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.51
+Llama-3.2-3B-Instruct,AKCB,2048,NarrativeQA,Single-doc QA,F1,18409,EN,25.25
+Llama-3.2-3B-Instruct,AKCB,2048,Qasper,Single-doc QA,F1,3619,EN,37.94
+Llama-3.2-3B-Instruct,AKCB,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,49.65
+Llama-3.2-3B-Instruct,AKCB,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,27.01
+Llama-3.2-3B-Instruct,AKCB,2048,HotpotQA,Multi-doc QA,F1,9151,EN,30.77
+Llama-3.2-3B-Instruct,AKCB,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,27.33
+Llama-3.2-3B-Instruct,AKCB,2048,MuSiQue,Multi-doc QA,F1,11214,EN,15.89
+Llama-3.2-3B-Instruct,AKCB,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,25.85
+Llama-3.2-3B-Instruct,AKCB,2048,GovReport,Summarization,Rouge-L,8734,EN,28.89
+Llama-3.2-3B-Instruct,AKCB,2048,QMSum,Summarization,Rouge-L,10614,EN,22.88
+Llama-3.2-3B-Instruct,AKCB,2048,MultiNews,Summarization,Rouge-L,2113,EN,25.18
+Llama-3.2-3B-Instruct,AKCB,2048,VCSUM,Summarization,Rouge-L,15380,ZH,14.29
+Llama-3.2-3B-Instruct,AKCB,2048,TREC,Few shot,Accuracy,5177,EN,72.0
+Llama-3.2-3B-Instruct,AKCB,2048,TriviaQA,Few shot,F1,8209,EN,89.11
+Llama-3.2-3B-Instruct,AKCB,2048,SAMSum,Few shot,Rouge-L,6258,EN,43.03
+Llama-3.2-3B-Instruct,AKCB,2048,LSHT,Few shot,Accuracy,22337,ZH,33.5
+Llama-3.2-3B-Instruct,AKCB,2048,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,AKCB,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,88.83
+Llama-3.2-3B-Instruct,AKCB,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,28.0
+Llama-3.2-3B-Instruct,AKCB,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,54.63
+Llama-3.2-3B-Instruct,AKCB,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.3
+Llama-3.2-3B-Instruct,Quant,2048,NarrativeQA,Single-doc QA,F1,18409,EN,5.88
+Llama-3.2-3B-Instruct,Quant,2048,Qasper,Single-doc QA,F1,3619,EN,7.39
+Llama-3.2-3B-Instruct,Quant,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,10.13
+Llama-3.2-3B-Instruct,Quant,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,13.32
+Llama-3.2-3B-Instruct,Quant,2048,HotpotQA,Multi-doc QA,F1,9151,EN,10.56
+Llama-3.2-3B-Instruct,Quant,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,9.77
+Llama-3.2-3B-Instruct,Quant,2048,MuSiQue,Multi-doc QA,F1,11214,EN,3.93
+Llama-3.2-3B-Instruct,Quant,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,7.38
+Llama-3.2-3B-Instruct,Quant,2048,GovReport,Summarization,Rouge-L,8734,EN,3.18
+Llama-3.2-3B-Instruct,Quant,2048,QMSum,Summarization,Rouge-L,10614,EN,9.93
+Llama-3.2-3B-Instruct,Quant,2048,MultiNews,Summarization,Rouge-L,2113,EN,13.65
+Llama-3.2-3B-Instruct,Quant,2048,VCSUM,Summarization,Rouge-L,15380,ZH,2.22
+Llama-3.2-3B-Instruct,Quant,2048,TREC,Few shot,Accuracy,5177,EN,48.0
+Llama-3.2-3B-Instruct,Quant,2048,TriviaQA,Few shot,F1,8209,EN,37.91
+Llama-3.2-3B-Instruct,Quant,2048,SAMSum,Few shot,Rouge-L,6258,EN,14.12
+Llama-3.2-3B-Instruct,Quant,2048,LSHT,Few shot,Accuracy,22337,ZH,17.5
+Llama-3.2-3B-Instruct,Quant,2048,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,Quant,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,68.28
+Llama-3.2-3B-Instruct,Quant,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,3.5
+Llama-3.2-3B-Instruct,Quant,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,28.5
+Llama-3.2-3B-Instruct,Quant,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,12.61
+Llama-3.2-3B-Instruct,Origin,2048,NarrativeQA,Single-doc QA,F1,18409,EN,25.7
+Llama-3.2-3B-Instruct,Origin,2048,Qasper,Single-doc QA,F1,3619,EN,38.33
+Llama-3.2-3B-Instruct,Origin,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,50.6
+Llama-3.2-3B-Instruct,Origin,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,26.52
+Llama-3.2-3B-Instruct,Origin,2048,HotpotQA,Multi-doc QA,F1,9151,EN,30.76
+Llama-3.2-3B-Instruct,Origin,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,26.57
+Llama-3.2-3B-Instruct,Origin,2048,MuSiQue,Multi-doc QA,F1,11214,EN,13.68
+Llama-3.2-3B-Instruct,Origin,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,25.23
+Llama-3.2-3B-Instruct,Origin,2048,GovReport,Summarization,Rouge-L,8734,EN,28.7
+Llama-3.2-3B-Instruct,Origin,2048,QMSum,Summarization,Rouge-L,10614,EN,22.29
+Llama-3.2-3B-Instruct,Origin,2048,MultiNews,Summarization,Rouge-L,2113,EN,25.07
+Llama-3.2-3B-Instruct,Origin,2048,VCSUM,Summarization,Rouge-L,15380,ZH,14.61
+Llama-3.2-3B-Instruct,Origin,2048,TREC,Few shot,Accuracy,5177,EN,72.0
+Llama-3.2-3B-Instruct,Origin,2048,TriviaQA,Few shot,F1,8209,EN,89.11
+Llama-3.2-3B-Instruct,Origin,2048,SAMSum,Few shot,Rouge-L,6258,EN,42.82
+Llama-3.2-3B-Instruct,Origin,2048,LSHT,Few shot,Accuracy,22337,ZH,33.5
+Llama-3.2-3B-Instruct,Origin,2048,PassageCount,Synthetic,Accuracy,11141,EN,3.5
+Llama-3.2-3B-Instruct,Origin,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,88.17
+Llama-3.2-3B-Instruct,Origin,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,29.0
+Llama-3.2-3B-Instruct,Origin,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,54.64
+Llama-3.2-3B-Instruct,Origin,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.58
+Meta-Llama-3.1-8B-Instruct,Base,,NarrativeQA,Single-doc QA,F1,18409,EN,27.61
+Meta-Llama-3.1-8B-Instruct,Base,,Qasper,Single-doc QA,F1,3619,EN,12.99
+Meta-Llama-3.1-8B-Instruct,Base,,MultiFieldQA-en,Single-doc QA,F1,4559,EN,26.75
+Meta-Llama-3.1-8B-Instruct,Base,,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.2
+Meta-Llama-3.1-8B-Instruct,Base,,HotpotQA,Multi-doc QA,F1,9151,EN,16.99
+Meta-Llama-3.1-8B-Instruct,Base,,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,16.34
+Meta-Llama-3.1-8B-Instruct,Base,,MuSiQue,Multi-doc QA,F1,11214,EN,11.1
+Meta-Llama-3.1-8B-Instruct,Base,,DuReader,Multi-doc QA,Rouge-L,15768,ZH,29.48
+Meta-Llama-3.1-8B-Instruct,Base,,GovReport,Summarization,Rouge-L,8734,EN,34.19
+Meta-Llama-3.1-8B-Instruct,Base,,QMSum,Summarization,Rouge-L,10614,EN,23.11
+Meta-Llama-3.1-8B-Instruct,Base,,MultiNews,Summarization,Rouge-L,2113,EN,26.73
+Meta-Llama-3.1-8B-Instruct,Base,,VCSUM,Summarization,Rouge-L,15380,ZH,16.02
+Meta-Llama-3.1-8B-Instruct,Base,,TREC,Few shot,Accuracy,5177,EN,72.5
+Meta-Llama-3.1-8B-Instruct,Base,,TriviaQA,Few shot,F1,8209,EN,91.65
+Meta-Llama-3.1-8B-Instruct,Base,,SAMSum,Few shot,Rouge-L,6258,EN,43.64
+Meta-Llama-3.1-8B-Instruct,Base,,LSHT,Few shot,Accuracy,22337,ZH,46.0
+Meta-Llama-3.1-8B-Instruct,Base,,PassageCount,Synthetic,Accuracy,11141,EN,5.92
+Meta-Llama-3.1-8B-Instruct,Base,,PassageRetr.-en,Synthetic,Accuracy,9289,EN,97.9
+Meta-Llama-3.1-8B-Instruct,Base,,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,77.03
+Meta-Llama-3.1-8B-Instruct,Base,,LCC,Code,Edit Sim,1235,Python/C#/Java,65.18
+Meta-Llama-3.1-8B-Instruct,Base,,RepoBench-P,Code,Edit Sim,4206,Python/Java,58.56
+Meta-Llama-3.1-8B-Instruct,AKCB,512,NarrativeQA,Single-doc QA,F1,18409,EN,24.79
+Meta-Llama-3.1-8B-Instruct,AKCB,512,Qasper,Single-doc QA,F1,3619,EN,11.38
+Meta-Llama-3.1-8B-Instruct,AKCB,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,25.74
+Meta-Llama-3.1-8B-Instruct,AKCB,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,19.97
+Meta-Llama-3.1-8B-Instruct,AKCB,512,HotpotQA,Multi-doc QA,F1,9151,EN,15.4
+Meta-Llama-3.1-8B-Instruct,AKCB,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,16.17
+Meta-Llama-3.1-8B-Instruct,AKCB,512,MuSiQue,Multi-doc QA,F1,11214,EN,11.48
+Meta-Llama-3.1-8B-Instruct,AKCB,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,24.21
+Meta-Llama-3.1-8B-Instruct,AKCB,512,GovReport,Summarization,Rouge-L,8734,EN,25.48
+Meta-Llama-3.1-8B-Instruct,AKCB,512,QMSum,Summarization,Rouge-L,10614,EN,22.43
+Meta-Llama-3.1-8B-Instruct,AKCB,512,MultiNews,Summarization,Rouge-L,2113,EN,23.97
+Meta-Llama-3.1-8B-Instruct,AKCB,512,VCSUM,Summarization,Rouge-L,15380,ZH,13.97
+Meta-Llama-3.1-8B-Instruct,AKCB,512,TREC,Few shot,Accuracy,5177,EN,72.5
+Meta-Llama-3.1-8B-Instruct,AKCB,512,TriviaQA,Few shot,F1,8209,EN,91.66
+Meta-Llama-3.1-8B-Instruct,AKCB,512,SAMSum,Few shot,Rouge-L,6258,EN,44.79
+Meta-Llama-3.1-8B-Instruct,AKCB,512,LSHT,Few shot,Accuracy,22337,ZH,46.0
+Meta-Llama-3.1-8B-Instruct,AKCB,512,PassageCount,Synthetic,Accuracy,11141,EN,6.08
+Meta-Llama-3.1-8B-Instruct,AKCB,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,97.11
+Meta-Llama-3.1-8B-Instruct,AKCB,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,77.09
+Meta-Llama-3.1-8B-Instruct,AKCB,512,LCC,Code,Edit Sim,1235,Python/C#/Java,63.43
+Meta-Llama-3.1-8B-Instruct,AKCB,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,55.91
+Meta-Llama-3.1-8B-Instruct,Quant,512,NarrativeQA,Single-doc QA,F1,18409,EN,5.7
+Meta-Llama-3.1-8B-Instruct,Quant,512,Qasper,Single-doc QA,F1,3619,EN,9.67
+Meta-Llama-3.1-8B-Instruct,Quant,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,8.58
+Meta-Llama-3.1-8B-Instruct,Quant,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,11.98
+Meta-Llama-3.1-8B-Instruct,Quant,512,HotpotQA,Multi-doc QA,F1,9151,EN,21.67
+Meta-Llama-3.1-8B-Instruct,Quant,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,11.98
+Meta-Llama-3.1-8B-Instruct,Quant,512,MuSiQue,Multi-doc QA,F1,11214,EN,6.58
+Meta-Llama-3.1-8B-Instruct,Quant,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,4.36
+Meta-Llama-3.1-8B-Instruct,Quant,512,GovReport,Summarization,Rouge-L,8734,EN,1.49
+Meta-Llama-3.1-8B-Instruct,Quant,512,QMSum,Summarization,Rouge-L,10614,EN,6.62
+Meta-Llama-3.1-8B-Instruct,Quant,512,MultiNews,Summarization,Rouge-L,2113,EN,1.84
+Meta-Llama-3.1-8B-Instruct,Quant,512,VCSUM,Summarization,Rouge-L,15380,ZH,0.2
+Meta-Llama-3.1-8B-Instruct,Quant,512,TREC,Few shot,Accuracy,5177,EN,47.0
+Meta-Llama-3.1-8B-Instruct,Quant,512,TriviaQA,Few shot,F1,8209,EN,28.53
+Meta-Llama-3.1-8B-Instruct,Quant,512,SAMSum,Few shot,Rouge-L,6258,EN,13.41
+Meta-Llama-3.1-8B-Instruct,Quant,512,LSHT,Few shot,Accuracy,22337,ZH,19.0
+Meta-Llama-3.1-8B-Instruct,Quant,512,PassageCount,Synthetic,Accuracy,11141,EN,9.5
+Meta-Llama-3.1-8B-Instruct,Quant,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,36.5
+Meta-Llama-3.1-8B-Instruct,Quant,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,0.0
+Meta-Llama-3.1-8B-Instruct,Quant,512,LCC,Code,Edit Sim,1235,Python/C#/Java,16.57
+Meta-Llama-3.1-8B-Instruct,Quant,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,14.87
+Meta-Llama-3.1-8B-Instruct,Origin,512,NarrativeQA,Single-doc QA,F1,18409,EN,27.18
+Meta-Llama-3.1-8B-Instruct,Origin,512,Qasper,Single-doc QA,F1,3619,EN,11.69
+Meta-Llama-3.1-8B-Instruct,Origin,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,26.74
+Meta-Llama-3.1-8B-Instruct,Origin,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.46
+Meta-Llama-3.1-8B-Instruct,Origin,512,HotpotQA,Multi-doc QA,F1,9151,EN,16.59
+Meta-Llama-3.1-8B-Instruct,Origin,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,16.74
+Meta-Llama-3.1-8B-Instruct,Origin,512,MuSiQue,Multi-doc QA,F1,11214,EN,11.95
+Meta-Llama-3.1-8B-Instruct,Origin,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,24.45
+Meta-Llama-3.1-8B-Instruct,Origin,512,GovReport,Summarization,Rouge-L,8734,EN,26.41
+Meta-Llama-3.1-8B-Instruct,Origin,512,QMSum,Summarization,Rouge-L,10614,EN,23.34
+Meta-Llama-3.1-8B-Instruct,Origin,512,MultiNews,Summarization,Rouge-L,2113,EN,24.48
+Meta-Llama-3.1-8B-Instruct,Origin,512,VCSUM,Summarization,Rouge-L,15380,ZH,15.23
+Meta-Llama-3.1-8B-Instruct,Origin,512,TREC,Few shot,Accuracy,5177,EN,72.5
+Meta-Llama-3.1-8B-Instruct,Origin,512,TriviaQA,Few shot,F1,8209,EN,91.65
+Meta-Llama-3.1-8B-Instruct,Origin,512,SAMSum,Few shot,Rouge-L,6258,EN,43.56
+Meta-Llama-3.1-8B-Instruct,Origin,512,LSHT,Few shot,Accuracy,22337,ZH,46.0
+Meta-Llama-3.1-8B-Instruct,Origin,512,PassageCount,Synthetic,Accuracy,11141,EN,6.11
+Meta-Llama-3.1-8B-Instruct,Origin,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,98.22
+Meta-Llama-3.1-8B-Instruct,Origin,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,76.58
+Meta-Llama-3.1-8B-Instruct,Origin,512,LCC,Code,Edit Sim,1235,Python/C#/Java,64.2
+Meta-Llama-3.1-8B-Instruct,Origin,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,58.16
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,NarrativeQA,Single-doc QA,F1,18409,EN,25.26
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,Qasper,Single-doc QA,F1,3619,EN,11.98
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,25.48
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.69
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,HotpotQA,Multi-doc QA,F1,9151,EN,16.4
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,16.76
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,MuSiQue,Multi-doc QA,F1,11214,EN,11.24
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,24.56
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,GovReport,Summarization,Rouge-L,8734,EN,27.39
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,QMSum,Summarization,Rouge-L,10614,EN,23.11
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,MultiNews,Summarization,Rouge-L,2113,EN,24.99
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,VCSUM,Summarization,Rouge-L,15380,ZH,14.71
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,TREC,Few shot,Accuracy,5177,EN,72.5
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,TriviaQA,Few shot,F1,8209,EN,91.17
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,SAMSum,Few shot,Rouge-L,6258,EN,43.94
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,LSHT,Few shot,Accuracy,22337,ZH,46.0
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,PassageCount,Synthetic,Accuracy,11141,EN,6.31
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,98.49
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,76.7
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,64.02
+Meta-Llama-3.1-8B-Instruct,AKCB,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.77
+Meta-Llama-3.1-8B-Instruct,Quant,1024,NarrativeQA,Single-doc QA,F1,18409,EN,5.7
+Meta-Llama-3.1-8B-Instruct,Quant,1024,Qasper,Single-doc QA,F1,3619,EN,9.67
+Meta-Llama-3.1-8B-Instruct,Quant,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,8.58
+Meta-Llama-3.1-8B-Instruct,Quant,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,12.11
+Meta-Llama-3.1-8B-Instruct,Quant,1024,HotpotQA,Multi-doc QA,F1,9151,EN,21.67
+Meta-Llama-3.1-8B-Instruct,Quant,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,11.57
+Meta-Llama-3.1-8B-Instruct,Quant,1024,MuSiQue,Multi-doc QA,F1,11214,EN,6.58
+Meta-Llama-3.1-8B-Instruct,Quant,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,4.36
+Meta-Llama-3.1-8B-Instruct,Quant,1024,GovReport,Summarization,Rouge-L,8734,EN,1.3
+Meta-Llama-3.1-8B-Instruct,Quant,1024,QMSum,Summarization,Rouge-L,10614,EN,6.33
+Meta-Llama-3.1-8B-Instruct,Quant,1024,MultiNews,Summarization,Rouge-L,2113,EN,4.2
+Meta-Llama-3.1-8B-Instruct,Quant,1024,VCSUM,Summarization,Rouge-L,15380,ZH,0.33
+Meta-Llama-3.1-8B-Instruct,Quant,1024,TREC,Few shot,Accuracy,5177,EN,47.0
+Meta-Llama-3.1-8B-Instruct,Quant,1024,TriviaQA,Few shot,F1,8209,EN,28.53
+Meta-Llama-3.1-8B-Instruct,Quant,1024,SAMSum,Few shot,Rouge-L,6258,EN,13.41
+Meta-Llama-3.1-8B-Instruct,Quant,1024,LSHT,Few shot,Accuracy,22337,ZH,19.0
+Meta-Llama-3.1-8B-Instruct,Quant,1024,PassageCount,Synthetic,Accuracy,11141,EN,9.5
+Meta-Llama-3.1-8B-Instruct,Quant,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,36.5
+Meta-Llama-3.1-8B-Instruct,Quant,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,0.0
+Meta-Llama-3.1-8B-Instruct,Quant,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,16.6
+Meta-Llama-3.1-8B-Instruct,Quant,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,14.87
+Meta-Llama-3.1-8B-Instruct,Origin,1024,NarrativeQA,Single-doc QA,F1,18409,EN,27.74
+Meta-Llama-3.1-8B-Instruct,Origin,1024,Qasper,Single-doc QA,F1,3619,EN,12.16
+Meta-Llama-3.1-8B-Instruct,Origin,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,27.48
+Meta-Llama-3.1-8B-Instruct,Origin,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.67
+Meta-Llama-3.1-8B-Instruct,Origin,1024,HotpotQA,Multi-doc QA,F1,9151,EN,16.64
+Meta-Llama-3.1-8B-Instruct,Origin,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,16.46
+Meta-Llama-3.1-8B-Instruct,Origin,1024,MuSiQue,Multi-doc QA,F1,11214,EN,11.97
+Meta-Llama-3.1-8B-Instruct,Origin,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,24.78
+Meta-Llama-3.1-8B-Instruct,Origin,1024,GovReport,Summarization,Rouge-L,8734,EN,28.13
+Meta-Llama-3.1-8B-Instruct,Origin,1024,QMSum,Summarization,Rouge-L,10614,EN,23.81
+Meta-Llama-3.1-8B-Instruct,Origin,1024,MultiNews,Summarization,Rouge-L,2113,EN,25.85
+Meta-Llama-3.1-8B-Instruct,Origin,1024,VCSUM,Summarization,Rouge-L,15380,ZH,15.79
+Meta-Llama-3.1-8B-Instruct,Origin,1024,TREC,Few shot,Accuracy,5177,EN,72.5
+Meta-Llama-3.1-8B-Instruct,Origin,1024,TriviaQA,Few shot,F1,8209,EN,91.65
+Meta-Llama-3.1-8B-Instruct,Origin,1024,SAMSum,Few shot,Rouge-L,6258,EN,43.69
+Meta-Llama-3.1-8B-Instruct,Origin,1024,LSHT,Few shot,Accuracy,22337,ZH,46.5
+Meta-Llama-3.1-8B-Instruct,Origin,1024,PassageCount,Synthetic,Accuracy,11141,EN,6.45
+Meta-Llama-3.1-8B-Instruct,Origin,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,97.8
+Meta-Llama-3.1-8B-Instruct,Origin,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,76.95
+Meta-Llama-3.1-8B-Instruct,Origin,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,64.73
+Meta-Llama-3.1-8B-Instruct,Origin,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,58.07
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,NarrativeQA,Single-doc QA,F1,18409,EN,26.88
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,Qasper,Single-doc QA,F1,3619,EN,12.42
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,27.71
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.56
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,HotpotQA,Multi-doc QA,F1,9151,EN,17.05
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,16.99
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,MuSiQue,Multi-doc QA,F1,11214,EN,11.88
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,25.57
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,GovReport,Summarization,Rouge-L,8734,EN,29.99
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,QMSum,Summarization,Rouge-L,10614,EN,23.71
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,MultiNews,Summarization,Rouge-L,2113,EN,26.25
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,VCSUM,Summarization,Rouge-L,15380,ZH,14.94
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,TREC,Few shot,Accuracy,5177,EN,72.5
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,TriviaQA,Few shot,F1,8209,EN,91.57
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,SAMSum,Few shot,Rouge-L,6258,EN,44.35
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,LSHT,Few shot,Accuracy,22337,ZH,46.0
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,PassageCount,Synthetic,Accuracy,11141,EN,5.77
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,98.32
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,76.08
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,64.88
+Meta-Llama-3.1-8B-Instruct,AKCB,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,57.55
+Meta-Llama-3.1-8B-Instruct,Quant,2048,NarrativeQA,Single-doc QA,F1,18409,EN,5.7
+Meta-Llama-3.1-8B-Instruct,Quant,2048,Qasper,Single-doc QA,F1,3619,EN,9.67
+Meta-Llama-3.1-8B-Instruct,Quant,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,9.7
+Meta-Llama-3.1-8B-Instruct,Quant,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,13.16
+Meta-Llama-3.1-8B-Instruct,Quant,2048,HotpotQA,Multi-doc QA,F1,9151,EN,21.98
+Meta-Llama-3.1-8B-Instruct,Quant,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,10.72
+Meta-Llama-3.1-8B-Instruct,Quant,2048,MuSiQue,Multi-doc QA,F1,11214,EN,6.58
+Meta-Llama-3.1-8B-Instruct,Quant,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,4.36
+Meta-Llama-3.1-8B-Instruct,Quant,2048,GovReport,Summarization,Rouge-L,8734,EN,1.3
+Meta-Llama-3.1-8B-Instruct,Quant,2048,QMSum,Summarization,Rouge-L,10614,EN,6.33
+Meta-Llama-3.1-8B-Instruct,Quant,2048,MultiNews,Summarization,Rouge-L,2113,EN,13.98
+Meta-Llama-3.1-8B-Instruct,Quant,2048,VCSUM,Summarization,Rouge-L,15380,ZH,0.51
+Meta-Llama-3.1-8B-Instruct,Quant,2048,TREC,Few shot,Accuracy,5177,EN,47.0
+Meta-Llama-3.1-8B-Instruct,Quant,2048,TriviaQA,Few shot,F1,8209,EN,29.81
+Meta-Llama-3.1-8B-Instruct,Quant,2048,SAMSum,Few shot,Rouge-L,6258,EN,14.51
+Meta-Llama-3.1-8B-Instruct,Quant,2048,LSHT,Few shot,Accuracy,22337,ZH,19.0
+Meta-Llama-3.1-8B-Instruct,Quant,2048,PassageCount,Synthetic,Accuracy,11141,EN,9.5
+Meta-Llama-3.1-8B-Instruct,Quant,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,36.5
+Meta-Llama-3.1-8B-Instruct,Quant,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,0.0
+Meta-Llama-3.1-8B-Instruct,Quant,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,34.29
+Meta-Llama-3.1-8B-Instruct,Quant,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,14.87
+Meta-Llama-3.1-8B-Instruct,Origin,2048,NarrativeQA,Single-doc QA,F1,18409,EN,27.19
+Meta-Llama-3.1-8B-Instruct,Origin,2048,Qasper,Single-doc QA,F1,3619,EN,12.39
+Meta-Llama-3.1-8B-Instruct,Origin,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,27.2
+Meta-Llama-3.1-8B-Instruct,Origin,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.09
+Meta-Llama-3.1-8B-Instruct,Origin,2048,HotpotQA,Multi-doc QA,F1,9151,EN,17.27
+Meta-Llama-3.1-8B-Instruct,Origin,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,16.33
+Meta-Llama-3.1-8B-Instruct,Origin,2048,MuSiQue,Multi-doc QA,F1,11214,EN,11.65
+Meta-Llama-3.1-8B-Instruct,Origin,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,25.64
+Meta-Llama-3.1-8B-Instruct,Origin,2048,GovReport,Summarization,Rouge-L,8734,EN,30.31
+Meta-Llama-3.1-8B-Instruct,Origin,2048,QMSum,Summarization,Rouge-L,10614,EN,23.22
+Meta-Llama-3.1-8B-Instruct,Origin,2048,MultiNews,Summarization,Rouge-L,2113,EN,26.44
+Meta-Llama-3.1-8B-Instruct,Origin,2048,VCSUM,Summarization,Rouge-L,15380,ZH,15.6
+Meta-Llama-3.1-8B-Instruct,Origin,2048,TREC,Few shot,Accuracy,5177,EN,72.5
+Meta-Llama-3.1-8B-Instruct,Origin,2048,TriviaQA,Few shot,F1,8209,EN,91.64
+Meta-Llama-3.1-8B-Instruct,Origin,2048,SAMSum,Few shot,Rouge-L,6258,EN,44.0
+Meta-Llama-3.1-8B-Instruct,Origin,2048,LSHT,Few shot,Accuracy,22337,ZH,46.5
+Meta-Llama-3.1-8B-Instruct,Origin,2048,PassageCount,Synthetic,Accuracy,11141,EN,6.65
+Meta-Llama-3.1-8B-Instruct,Origin,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,97.31
+Meta-Llama-3.1-8B-Instruct,Origin,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,75.67
+Meta-Llama-3.1-8B-Instruct,Origin,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,65.22
+Meta-Llama-3.1-8B-Instruct,Origin,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,58.17
+Qwen3-4B-Instruct-2507,Base,,NarrativeQA,Single-doc QA,F1,18409,EN,20.28
+Qwen3-4B-Instruct-2507,Base,,Qasper,Single-doc QA,F1,3619,EN,27.94
+Qwen3-4B-Instruct-2507,Base,,MultiFieldQA-en,Single-doc QA,F1,4559,EN,39.98
+Qwen3-4B-Instruct-2507,Base,,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,35.32
+Qwen3-4B-Instruct-2507,Base,,HotpotQA,Multi-doc QA,F1,9151,EN,15.24
+Qwen3-4B-Instruct-2507,Base,,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,14.21
+Qwen3-4B-Instruct-2507,Base,,MuSiQue,Multi-doc QA,F1,11214,EN,8.06
+Qwen3-4B-Instruct-2507,Base,,DuReader,Multi-doc QA,Rouge-L,15768,ZH,27.93
+Qwen3-4B-Instruct-2507,Base,,GovReport,Summarization,Rouge-L,8734,EN,28.48
+Qwen3-4B-Instruct-2507,Base,,QMSum,Summarization,Rouge-L,10614,EN,19.23
+Qwen3-4B-Instruct-2507,Base,,MultiNews,Summarization,Rouge-L,2113,EN,22.16
+Qwen3-4B-Instruct-2507,Base,,VCSUM,Summarization,Rouge-L,15380,ZH,11.56
+Qwen3-4B-Instruct-2507,Base,,TREC,Few shot,Accuracy,5177,EN,74.5
+Qwen3-4B-Instruct-2507,Base,,TriviaQA,Few shot,F1,8209,EN,88.19
+Qwen3-4B-Instruct-2507,Base,,SAMSum,Few shot,Rouge-L,6258,EN,45.16
+Qwen3-4B-Instruct-2507,Base,,LSHT,Few shot,Accuracy,22337,ZH,43.5
+Qwen3-4B-Instruct-2507,Base,,PassageCount,Synthetic,Accuracy,11141,EN,1.8
+Qwen3-4B-Instruct-2507,Base,,PassageRetr.-en,Synthetic,Accuracy,9289,EN,87.33
+Qwen3-4B-Instruct-2507,Base,,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,89.67
+Qwen3-4B-Instruct-2507,Base,,LCC,Code,Edit Sim,1235,Python/C#/Java,64.47
+Qwen3-4B-Instruct-2507,Base,,RepoBench-P,Code,Edit Sim,4206,Python/Java,57.58
+Qwen3-4B-Instruct-2507,AKCB,512,NarrativeQA,Single-doc QA,F1,18409,EN,18.15
+Qwen3-4B-Instruct-2507,AKCB,512,Qasper,Single-doc QA,F1,3619,EN,16.93
+Qwen3-4B-Instruct-2507,AKCB,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,36.25
+Qwen3-4B-Instruct-2507,AKCB,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,28.32
+Qwen3-4B-Instruct-2507,AKCB,512,HotpotQA,Multi-doc QA,F1,9151,EN,18.28
+Qwen3-4B-Instruct-2507,AKCB,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,14.11
+Qwen3-4B-Instruct-2507,AKCB,512,MuSiQue,Multi-doc QA,F1,11214,EN,7.45
+Qwen3-4B-Instruct-2507,AKCB,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,21.52
+Qwen3-4B-Instruct-2507,AKCB,512,GovReport,Summarization,Rouge-L,8734,EN,23.83
+Qwen3-4B-Instruct-2507,AKCB,512,QMSum,Summarization,Rouge-L,10614,EN,21.5
+Qwen3-4B-Instruct-2507,AKCB,512,MultiNews,Summarization,Rouge-L,2113,EN,21.1
+Qwen3-4B-Instruct-2507,AKCB,512,VCSUM,Summarization,Rouge-L,15380,ZH,9.68
+Qwen3-4B-Instruct-2507,AKCB,512,TREC,Few shot,Accuracy,5177,EN,74.5
+Qwen3-4B-Instruct-2507,AKCB,512,TriviaQA,Few shot,F1,8209,EN,88.18
+Qwen3-4B-Instruct-2507,AKCB,512,SAMSum,Few shot,Rouge-L,6258,EN,44.41
+Qwen3-4B-Instruct-2507,AKCB,512,LSHT,Few shot,Accuracy,22337,ZH,43.5
+Qwen3-4B-Instruct-2507,AKCB,512,PassageCount,Synthetic,Accuracy,11141,EN,2.45
+Qwen3-4B-Instruct-2507,AKCB,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,84.75
+Qwen3-4B-Instruct-2507,AKCB,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,87.61
+Qwen3-4B-Instruct-2507,AKCB,512,LCC,Code,Edit Sim,1235,Python/C#/Java,62.53
+Qwen3-4B-Instruct-2507,AKCB,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,54.29
+Qwen3-4B-Instruct-2507,Quant,512,NarrativeQA,Single-doc QA,F1,18409,EN,3.32
+Qwen3-4B-Instruct-2507,Quant,512,Qasper,Single-doc QA,F1,3619,EN,5.48
+Qwen3-4B-Instruct-2507,Quant,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,11.49
+Qwen3-4B-Instruct-2507,Quant,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,7.05
+Qwen3-4B-Instruct-2507,Quant,512,HotpotQA,Multi-doc QA,F1,9151,EN,10.1
+Qwen3-4B-Instruct-2507,Quant,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,9.92
+Qwen3-4B-Instruct-2507,Quant,512,MuSiQue,Multi-doc QA,F1,11214,EN,2.8
+Qwen3-4B-Instruct-2507,Quant,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,6.66
+Qwen3-4B-Instruct-2507,Quant,512,GovReport,Summarization,Rouge-L,8734,EN,3.19
+Qwen3-4B-Instruct-2507,Quant,512,QMSum,Summarization,Rouge-L,10614,EN,17.56
+Qwen3-4B-Instruct-2507,Quant,512,MultiNews,Summarization,Rouge-L,2113,EN,4.29
+Qwen3-4B-Instruct-2507,Quant,512,VCSUM,Summarization,Rouge-L,15380,ZH,3.32
+Qwen3-4B-Instruct-2507,Quant,512,TREC,Few shot,Accuracy,5177,EN,50.0
+Qwen3-4B-Instruct-2507,Quant,512,TriviaQA,Few shot,F1,8209,EN,35.71
+Qwen3-4B-Instruct-2507,Quant,512,SAMSum,Few shot,Rouge-L,6258,EN,16.37
+Qwen3-4B-Instruct-2507,Quant,512,LSHT,Few shot,Accuracy,22337,ZH,21.0
+Qwen3-4B-Instruct-2507,Quant,512,PassageCount,Synthetic,Accuracy,11141,EN,1.09
+Qwen3-4B-Instruct-2507,Quant,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,50.55
+Qwen3-4B-Instruct-2507,Quant,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,9.5
+Qwen3-4B-Instruct-2507,Quant,512,LCC,Code,Edit Sim,1235,Python/C#/Java,18.68
+Qwen3-4B-Instruct-2507,Quant,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,18.97
+Qwen3-4B-Instruct-2507,Origin,512,NarrativeQA,Single-doc QA,F1,18409,EN,20.4
+Qwen3-4B-Instruct-2507,Origin,512,Qasper,Single-doc QA,F1,3619,EN,19.71
+Qwen3-4B-Instruct-2507,Origin,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,36.71
+Qwen3-4B-Instruct-2507,Origin,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,30.56
+Qwen3-4B-Instruct-2507,Origin,512,HotpotQA,Multi-doc QA,F1,9151,EN,15.19
+Qwen3-4B-Instruct-2507,Origin,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,13.0
+Qwen3-4B-Instruct-2507,Origin,512,MuSiQue,Multi-doc QA,F1,11214,EN,7.03
+Qwen3-4B-Instruct-2507,Origin,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,22.78
+Qwen3-4B-Instruct-2507,Origin,512,GovReport,Summarization,Rouge-L,8734,EN,25.1
+Qwen3-4B-Instruct-2507,Origin,512,QMSum,Summarization,Rouge-L,10614,EN,21.45
+Qwen3-4B-Instruct-2507,Origin,512,MultiNews,Summarization,Rouge-L,2113,EN,21.61
+Qwen3-4B-Instruct-2507,Origin,512,VCSUM,Summarization,Rouge-L,15380,ZH,10.38
+Qwen3-4B-Instruct-2507,Origin,512,TREC,Few shot,Accuracy,5177,EN,74.5
+Qwen3-4B-Instruct-2507,Origin,512,TriviaQA,Few shot,F1,8209,EN,87.31
+Qwen3-4B-Instruct-2507,Origin,512,SAMSum,Few shot,Rouge-L,6258,EN,44.58
+Qwen3-4B-Instruct-2507,Origin,512,LSHT,Few shot,Accuracy,22337,ZH,43.5
+Qwen3-4B-Instruct-2507,Origin,512,PassageCount,Synthetic,Accuracy,11141,EN,2.38
+Qwen3-4B-Instruct-2507,Origin,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,86.46
+Qwen3-4B-Instruct-2507,Origin,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,88.69
+Qwen3-4B-Instruct-2507,Origin,512,LCC,Code,Edit Sim,1235,Python/C#/Java,64.2
+Qwen3-4B-Instruct-2507,Origin,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.66
+Qwen3-4B-Instruct-2507,AKCB,1024,NarrativeQA,Single-doc QA,F1,18409,EN,17.82
+Qwen3-4B-Instruct-2507,AKCB,1024,Qasper,Single-doc QA,F1,3619,EN,22.43
+Qwen3-4B-Instruct-2507,AKCB,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,37.6
+Qwen3-4B-Instruct-2507,AKCB,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,30.09
+Qwen3-4B-Instruct-2507,AKCB,1024,HotpotQA,Multi-doc QA,F1,9151,EN,17.52
+Qwen3-4B-Instruct-2507,AKCB,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,14.4
+Qwen3-4B-Instruct-2507,AKCB,1024,MuSiQue,Multi-doc QA,F1,11214,EN,7.76
+Qwen3-4B-Instruct-2507,AKCB,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,23.42
+Qwen3-4B-Instruct-2507,AKCB,1024,GovReport,Summarization,Rouge-L,8734,EN,25.54
+Qwen3-4B-Instruct-2507,AKCB,1024,QMSum,Summarization,Rouge-L,10614,EN,21.59
+Qwen3-4B-Instruct-2507,AKCB,1024,MultiNews,Summarization,Rouge-L,2113,EN,21.8
+Qwen3-4B-Instruct-2507,AKCB,1024,VCSUM,Summarization,Rouge-L,15380,ZH,10.12
+Qwen3-4B-Instruct-2507,AKCB,1024,TREC,Few shot,Accuracy,5177,EN,74.5
+Qwen3-4B-Instruct-2507,AKCB,1024,TriviaQA,Few shot,F1,8209,EN,87.88
+Qwen3-4B-Instruct-2507,AKCB,1024,SAMSum,Few shot,Rouge-L,6258,EN,44.9
+Qwen3-4B-Instruct-2507,AKCB,1024,LSHT,Few shot,Accuracy,22337,ZH,43.5
+Qwen3-4B-Instruct-2507,AKCB,1024,PassageCount,Synthetic,Accuracy,11141,EN,2.71
+Qwen3-4B-Instruct-2507,AKCB,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,88.0
+Qwen3-4B-Instruct-2507,AKCB,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,88.01
+Qwen3-4B-Instruct-2507,AKCB,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,64.18
+Qwen3-4B-Instruct-2507,AKCB,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.61
+Qwen3-4B-Instruct-2507,Quant,1024,NarrativeQA,Single-doc QA,F1,18409,EN,3.32
+Qwen3-4B-Instruct-2507,Quant,1024,Qasper,Single-doc QA,F1,3619,EN,5.48
+Qwen3-4B-Instruct-2507,Quant,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,11.49
+Qwen3-4B-Instruct-2507,Quant,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,7.43
+Qwen3-4B-Instruct-2507,Quant,1024,HotpotQA,Multi-doc QA,F1,9151,EN,10.1
+Qwen3-4B-Instruct-2507,Quant,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,9.92
+Qwen3-4B-Instruct-2507,Quant,1024,MuSiQue,Multi-doc QA,F1,11214,EN,2.8
+Qwen3-4B-Instruct-2507,Quant,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,6.66
+Qwen3-4B-Instruct-2507,Quant,1024,GovReport,Summarization,Rouge-L,8734,EN,2.22
+Qwen3-4B-Instruct-2507,Quant,1024,QMSum,Summarization,Rouge-L,10614,EN,17.16
+Qwen3-4B-Instruct-2507,Quant,1024,MultiNews,Summarization,Rouge-L,2113,EN,5.69
+Qwen3-4B-Instruct-2507,Quant,1024,VCSUM,Summarization,Rouge-L,15380,ZH,2.43
+Qwen3-4B-Instruct-2507,Quant,1024,TREC,Few shot,Accuracy,5177,EN,50.0
+Qwen3-4B-Instruct-2507,Quant,1024,TriviaQA,Few shot,F1,8209,EN,35.71
+Qwen3-4B-Instruct-2507,Quant,1024,SAMSum,Few shot,Rouge-L,6258,EN,16.37
+Qwen3-4B-Instruct-2507,Quant,1024,LSHT,Few shot,Accuracy,22337,ZH,21.0
+Qwen3-4B-Instruct-2507,Quant,1024,PassageCount,Synthetic,Accuracy,11141,EN,1.09
+Qwen3-4B-Instruct-2507,Quant,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,50.55
+Qwen3-4B-Instruct-2507,Quant,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,9.5
+Qwen3-4B-Instruct-2507,Quant,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,18.88
+Qwen3-4B-Instruct-2507,Quant,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,18.97
+Qwen3-4B-Instruct-2507,Origin,1024,NarrativeQA,Single-doc QA,F1,18409,EN,19.92
+Qwen3-4B-Instruct-2507,Origin,1024,Qasper,Single-doc QA,F1,3619,EN,22.18
+Qwen3-4B-Instruct-2507,Origin,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,38.2
+Qwen3-4B-Instruct-2507,Origin,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,32.8
+Qwen3-4B-Instruct-2507,Origin,1024,HotpotQA,Multi-doc QA,F1,9151,EN,15.28
+Qwen3-4B-Instruct-2507,Origin,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,12.98
+Qwen3-4B-Instruct-2507,Origin,1024,MuSiQue,Multi-doc QA,F1,11214,EN,7.24
+Qwen3-4B-Instruct-2507,Origin,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,23.47
+Qwen3-4B-Instruct-2507,Origin,1024,GovReport,Summarization,Rouge-L,8734,EN,26.59
+Qwen3-4B-Instruct-2507,Origin,1024,QMSum,Summarization,Rouge-L,10614,EN,21.07
+Qwen3-4B-Instruct-2507,Origin,1024,MultiNews,Summarization,Rouge-L,2113,EN,21.65
+Qwen3-4B-Instruct-2507,Origin,1024,VCSUM,Summarization,Rouge-L,15380,ZH,10.51
+Qwen3-4B-Instruct-2507,Origin,1024,TREC,Few shot,Accuracy,5177,EN,74.5
+Qwen3-4B-Instruct-2507,Origin,1024,TriviaQA,Few shot,F1,8209,EN,87.47
+Qwen3-4B-Instruct-2507,Origin,1024,SAMSum,Few shot,Rouge-L,6258,EN,45.23
+Qwen3-4B-Instruct-2507,Origin,1024,LSHT,Few shot,Accuracy,22337,ZH,43.5
+Qwen3-4B-Instruct-2507,Origin,1024,PassageCount,Synthetic,Accuracy,11141,EN,2.67
+Qwen3-4B-Instruct-2507,Origin,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,86.75
+Qwen3-4B-Instruct-2507,Origin,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,88.5
+Qwen3-4B-Instruct-2507,Origin,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,64.38
+Qwen3-4B-Instruct-2507,Origin,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.78
+Qwen3-4B-Instruct-2507,AKCB,2048,NarrativeQA,Single-doc QA,F1,18409,EN,18.89
+Qwen3-4B-Instruct-2507,AKCB,2048,Qasper,Single-doc QA,F1,3619,EN,25.73
+Qwen3-4B-Instruct-2507,AKCB,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,39.56
+Qwen3-4B-Instruct-2507,AKCB,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,33.92
+Qwen3-4B-Instruct-2507,AKCB,2048,HotpotQA,Multi-doc QA,F1,9151,EN,15.71
+Qwen3-4B-Instruct-2507,AKCB,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,14.2
+Qwen3-4B-Instruct-2507,AKCB,2048,MuSiQue,Multi-doc QA,F1,11214,EN,8.51
+Qwen3-4B-Instruct-2507,AKCB,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,24.59
+Qwen3-4B-Instruct-2507,AKCB,2048,GovReport,Summarization,Rouge-L,8734,EN,26.97
+Qwen3-4B-Instruct-2507,AKCB,2048,QMSum,Summarization,Rouge-L,10614,EN,21.33
+Qwen3-4B-Instruct-2507,AKCB,2048,MultiNews,Summarization,Rouge-L,2113,EN,21.97
+Qwen3-4B-Instruct-2507,AKCB,2048,VCSUM,Summarization,Rouge-L,15380,ZH,10.71
+Qwen3-4B-Instruct-2507,AKCB,2048,TREC,Few shot,Accuracy,5177,EN,74.5
+Qwen3-4B-Instruct-2507,AKCB,2048,TriviaQA,Few shot,F1,8209,EN,87.89
+Qwen3-4B-Instruct-2507,AKCB,2048,SAMSum,Few shot,Rouge-L,6258,EN,45.14
+Qwen3-4B-Instruct-2507,AKCB,2048,LSHT,Few shot,Accuracy,22337,ZH,43.5
+Qwen3-4B-Instruct-2507,AKCB,2048,PassageCount,Synthetic,Accuracy,11141,EN,2.49
+Qwen3-4B-Instruct-2507,AKCB,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,88.5
+Qwen3-4B-Instruct-2507,AKCB,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,89.92
+Qwen3-4B-Instruct-2507,AKCB,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,64.12
+Qwen3-4B-Instruct-2507,AKCB,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.63
+Qwen3-4B-Instruct-2507,Quant,2048,NarrativeQA,Single-doc QA,F1,18409,EN,3.32
+Qwen3-4B-Instruct-2507,Quant,2048,Qasper,Single-doc QA,F1,3619,EN,5.48
+Qwen3-4B-Instruct-2507,Quant,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,13.76
+Qwen3-4B-Instruct-2507,Quant,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,12.07
+Qwen3-4B-Instruct-2507,Quant,2048,HotpotQA,Multi-doc QA,F1,9151,EN,10.14
+Qwen3-4B-Instruct-2507,Quant,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,9.84
+Qwen3-4B-Instruct-2507,Quant,2048,MuSiQue,Multi-doc QA,F1,11214,EN,2.8
+Qwen3-4B-Instruct-2507,Quant,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,6.66
+Qwen3-4B-Instruct-2507,Quant,2048,GovReport,Summarization,Rouge-L,8734,EN,2.22
+Qwen3-4B-Instruct-2507,Quant,2048,QMSum,Summarization,Rouge-L,10614,EN,17.16
+Qwen3-4B-Instruct-2507,Quant,2048,MultiNews,Summarization,Rouge-L,2113,EN,12.61
+Qwen3-4B-Instruct-2507,Quant,2048,VCSUM,Summarization,Rouge-L,15380,ZH,2.54
+Qwen3-4B-Instruct-2507,Quant,2048,TREC,Few shot,Accuracy,5177,EN,50.0
+Qwen3-4B-Instruct-2507,Quant,2048,TriviaQA,Few shot,F1,8209,EN,35.51
+Qwen3-4B-Instruct-2507,Quant,2048,SAMSum,Few shot,Rouge-L,6258,EN,17.08
+Qwen3-4B-Instruct-2507,Quant,2048,LSHT,Few shot,Accuracy,22337,ZH,21.0
+Qwen3-4B-Instruct-2507,Quant,2048,PassageCount,Synthetic,Accuracy,11141,EN,1.09
+Qwen3-4B-Instruct-2507,Quant,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,50.55
+Qwen3-4B-Instruct-2507,Quant,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,9.5
+Qwen3-4B-Instruct-2507,Quant,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,36.01
+Qwen3-4B-Instruct-2507,Quant,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,18.97
+Qwen3-4B-Instruct-2507,Origin,2048,NarrativeQA,Single-doc QA,F1,18409,EN,19.5
+Qwen3-4B-Instruct-2507,Origin,2048,Qasper,Single-doc QA,F1,3619,EN,25.14
+Qwen3-4B-Instruct-2507,Origin,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,39.41
+Qwen3-4B-Instruct-2507,Origin,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,34.79
+Qwen3-4B-Instruct-2507,Origin,2048,HotpotQA,Multi-doc QA,F1,9151,EN,15.49
+Qwen3-4B-Instruct-2507,Origin,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,13.93
+Qwen3-4B-Instruct-2507,Origin,2048,MuSiQue,Multi-doc QA,F1,11214,EN,7.45
+Qwen3-4B-Instruct-2507,Origin,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,25.55
+Qwen3-4B-Instruct-2507,Origin,2048,GovReport,Summarization,Rouge-L,8734,EN,27.42
+Qwen3-4B-Instruct-2507,Origin,2048,QMSum,Summarization,Rouge-L,10614,EN,21.01
+Qwen3-4B-Instruct-2507,Origin,2048,MultiNews,Summarization,Rouge-L,2113,EN,21.98
+Qwen3-4B-Instruct-2507,Origin,2048,VCSUM,Summarization,Rouge-L,15380,ZH,10.86
+Qwen3-4B-Instruct-2507,Origin,2048,TREC,Few shot,Accuracy,5177,EN,74.5
+Qwen3-4B-Instruct-2507,Origin,2048,TriviaQA,Few shot,F1,8209,EN,87.24
+Qwen3-4B-Instruct-2507,Origin,2048,SAMSum,Few shot,Rouge-L,6258,EN,45.46
+Qwen3-4B-Instruct-2507,Origin,2048,LSHT,Few shot,Accuracy,22337,ZH,43.5
+Qwen3-4B-Instruct-2507,Origin,2048,PassageCount,Synthetic,Accuracy,11141,EN,2.4
+Qwen3-4B-Instruct-2507,Origin,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,87.92
+Qwen3-4B-Instruct-2507,Origin,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,89.08
+Qwen3-4B-Instruct-2507,Origin,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,64.26
+Qwen3-4B-Instruct-2507,Origin,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,56.72
+Qwen3-8B,Base,,NarrativeQA,Single-doc QA,F1,18409,EN,3.6
+Qwen3-8B,Base,,Qasper,Single-doc QA,F1,3619,EN,11.48
+Qwen3-8B,Base,,MultiFieldQA-en,Single-doc QA,F1,4559,EN,26.91
+Qwen3-8B,Base,,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.61
+Qwen3-8B,Base,,HotpotQA,Multi-doc QA,F1,9151,EN,12.76
+Qwen3-8B,Base,,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,12.96
+Qwen3-8B,Base,,MuSiQue,Multi-doc QA,F1,11214,EN,7.51
+Qwen3-8B,Base,,DuReader,Multi-doc QA,Rouge-L,15768,ZH,22.95
+Qwen3-8B,Base,,GovReport,Summarization,Rouge-L,8734,EN,29.62
+Qwen3-8B,Base,,QMSum,Summarization,Rouge-L,10614,EN,21.04
+Qwen3-8B,Base,,MultiNews,Summarization,Rouge-L,2113,EN,22.98
+Qwen3-8B,Base,,VCSUM,Summarization,Rouge-L,15380,ZH,14.29
+Qwen3-8B,Base,,TREC,Few shot,Accuracy,5177,EN,71.5
+Qwen3-8B,Base,,TriviaQA,Few shot,F1,8209,EN,90.71
+Qwen3-8B,Base,,SAMSum,Few shot,Rouge-L,6258,EN,44.1
+Qwen3-8B,Base,,LSHT,Few shot,Accuracy,22337,ZH,47.5
+Qwen3-8B,Base,,PassageCount,Synthetic,Accuracy,11141,EN,6.83
+Qwen3-8B,Base,,PassageRetr.-en,Synthetic,Accuracy,9289,EN,95.37
+Qwen3-8B,Base,,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,97.6
+Qwen3-8B,Base,,LCC,Code,Edit Sim,1235,Python/C#/Java,68.72
+Qwen3-8B,Base,,RepoBench-P,Code,Edit Sim,4206,Python/Java,65.43
+Qwen3-8B,AKCB,512,NarrativeQA,Single-doc QA,F1,18409,EN,3.5
+Qwen3-8B,AKCB,512,Qasper,Single-doc QA,F1,3619,EN,8.93
+Qwen3-8B,AKCB,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,24.02
+Qwen3-8B,AKCB,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,18.59
+Qwen3-8B,AKCB,512,HotpotQA,Multi-doc QA,F1,9151,EN,12.37
+Qwen3-8B,AKCB,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,11.7
+Qwen3-8B,AKCB,512,MuSiQue,Multi-doc QA,F1,11214,EN,6.41
+Qwen3-8B,AKCB,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,18.5
+Qwen3-8B,AKCB,512,GovReport,Summarization,Rouge-L,8734,EN,23.43
+Qwen3-8B,AKCB,512,QMSum,Summarization,Rouge-L,10614,EN,19.65
+Qwen3-8B,AKCB,512,MultiNews,Summarization,Rouge-L,2113,EN,20.56
+Qwen3-8B,AKCB,512,VCSUM,Summarization,Rouge-L,15380,ZH,12.76
+Qwen3-8B,AKCB,512,TREC,Few shot,Accuracy,5177,EN,71.5
+Qwen3-8B,AKCB,512,TriviaQA,Few shot,F1,8209,EN,90.55
+Qwen3-8B,AKCB,512,SAMSum,Few shot,Rouge-L,6258,EN,43.47
+Qwen3-8B,AKCB,512,LSHT,Few shot,Accuracy,22337,ZH,47.5
+Qwen3-8B,AKCB,512,PassageCount,Synthetic,Accuracy,11141,EN,7.61
+Qwen3-8B,AKCB,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,92.46
+Qwen3-8B,AKCB,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,97.12
+Qwen3-8B,AKCB,512,LCC,Code,Edit Sim,1235,Python/C#/Java,66.99
+Qwen3-8B,AKCB,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,62.3
+Qwen3-8B,Quant,512,NarrativeQA,Single-doc QA,F1,18409,EN,2.05
+Qwen3-8B,Quant,512,Qasper,Single-doc QA,F1,3619,EN,3.19
+Qwen3-8B,Quant,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,10.88
+Qwen3-8B,Quant,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,7.01
+Qwen3-8B,Quant,512,HotpotQA,Multi-doc QA,F1,9151,EN,10.25
+Qwen3-8B,Quant,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,8.71
+Qwen3-8B,Quant,512,MuSiQue,Multi-doc QA,F1,11214,EN,3.4
+Qwen3-8B,Quant,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,13.81
+Qwen3-8B,Quant,512,GovReport,Summarization,Rouge-L,8734,EN,1.61
+Qwen3-8B,Quant,512,QMSum,Summarization,Rouge-L,10614,EN,16.85
+Qwen3-8B,Quant,512,MultiNews,Summarization,Rouge-L,2113,EN,0.97
+Qwen3-8B,Quant,512,VCSUM,Summarization,Rouge-L,15380,ZH,3.26
+Qwen3-8B,Quant,512,TREC,Few shot,Accuracy,5177,EN,50.5
+Qwen3-8B,Quant,512,TriviaQA,Few shot,F1,8209,EN,54.01
+Qwen3-8B,Quant,512,SAMSum,Few shot,Rouge-L,6258,EN,17.95
+Qwen3-8B,Quant,512,LSHT,Few shot,Accuracy,22337,ZH,18.5
+Qwen3-8B,Quant,512,PassageCount,Synthetic,Accuracy,11141,EN,7.08
+Qwen3-8B,Quant,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,75.14
+Qwen3-8B,Quant,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,9.33
+Qwen3-8B,Quant,512,LCC,Code,Edit Sim,1235,Python/C#/Java,28.75
+Qwen3-8B,Quant,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,28.21
+Qwen3-8B,Origin,512,NarrativeQA,Single-doc QA,F1,18409,EN,3.73
+Qwen3-8B,Origin,512,Qasper,Single-doc QA,F1,3619,EN,9.59
+Qwen3-8B,Origin,512,MultiFieldQA-en,Single-doc QA,F1,4559,EN,24.13
+Qwen3-8B,Origin,512,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,19.44
+Qwen3-8B,Origin,512,HotpotQA,Multi-doc QA,F1,9151,EN,12.07
+Qwen3-8B,Origin,512,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,11.81
+Qwen3-8B,Origin,512,MuSiQue,Multi-doc QA,F1,11214,EN,6.9
+Qwen3-8B,Origin,512,DuReader,Multi-doc QA,Rouge-L,15768,ZH,18.76
+Qwen3-8B,Origin,512,GovReport,Summarization,Rouge-L,8734,EN,24.17
+Qwen3-8B,Origin,512,QMSum,Summarization,Rouge-L,10614,EN,21.13
+Qwen3-8B,Origin,512,MultiNews,Summarization,Rouge-L,2113,EN,20.03
+Qwen3-8B,Origin,512,VCSUM,Summarization,Rouge-L,15380,ZH,13.75
+Qwen3-8B,Origin,512,TREC,Few shot,Accuracy,5177,EN,71.5
+Qwen3-8B,Origin,512,TriviaQA,Few shot,F1,8209,EN,90.71
+Qwen3-8B,Origin,512,SAMSum,Few shot,Rouge-L,6258,EN,44.49
+Qwen3-8B,Origin,512,LSHT,Few shot,Accuracy,22337,ZH,47.5
+Qwen3-8B,Origin,512,PassageCount,Synthetic,Accuracy,11141,EN,6.68
+Qwen3-8B,Origin,512,PassageRetr.-en,Synthetic,Accuracy,9289,EN,96.33
+Qwen3-8B,Origin,512,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,97.1
+Qwen3-8B,Origin,512,LCC,Code,Edit Sim,1235,Python/C#/Java,68.58
+Qwen3-8B,Origin,512,RepoBench-P,Code,Edit Sim,4206,Python/Java,65.07
+Qwen3-8B,AKCB,1024,NarrativeQA,Single-doc QA,F1,18409,EN,3.52
+Qwen3-8B,AKCB,1024,Qasper,Single-doc QA,F1,3619,EN,9.84
+Qwen3-8B,AKCB,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,24.63
+Qwen3-8B,AKCB,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,19.63
+Qwen3-8B,AKCB,1024,HotpotQA,Multi-doc QA,F1,9151,EN,12.31
+Qwen3-8B,AKCB,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,12.25
+Qwen3-8B,AKCB,1024,MuSiQue,Multi-doc QA,F1,11214,EN,6.52
+Qwen3-8B,AKCB,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,19.23
+Qwen3-8B,AKCB,1024,GovReport,Summarization,Rouge-L,8734,EN,25.89
+Qwen3-8B,AKCB,1024,QMSum,Summarization,Rouge-L,10614,EN,20.02
+Qwen3-8B,AKCB,1024,MultiNews,Summarization,Rouge-L,2113,EN,21.73
+Qwen3-8B,AKCB,1024,VCSUM,Summarization,Rouge-L,15380,ZH,13.26
+Qwen3-8B,AKCB,1024,TREC,Few shot,Accuracy,5177,EN,71.5
+Qwen3-8B,AKCB,1024,TriviaQA,Few shot,F1,8209,EN,90.55
+Qwen3-8B,AKCB,1024,SAMSum,Few shot,Rouge-L,6258,EN,44.33
+Qwen3-8B,AKCB,1024,LSHT,Few shot,Accuracy,22337,ZH,47.5
+Qwen3-8B,AKCB,1024,PassageCount,Synthetic,Accuracy,11141,EN,7.8
+Qwen3-8B,AKCB,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,93.87
+Qwen3-8B,AKCB,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,97.1
+Qwen3-8B,AKCB,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,68.37
+Qwen3-8B,AKCB,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,64.27
+Qwen3-8B,Quant,1024,NarrativeQA,Single-doc QA,F1,18409,EN,2.05
+Qwen3-8B,Quant,1024,Qasper,Single-doc QA,F1,3619,EN,3.19
+Qwen3-8B,Quant,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,10.88
+Qwen3-8B,Quant,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,7.15
+Qwen3-8B,Quant,1024,HotpotQA,Multi-doc QA,F1,9151,EN,10.25
+Qwen3-8B,Quant,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,8.71
+Qwen3-8B,Quant,1024,MuSiQue,Multi-doc QA,F1,11214,EN,3.4
+Qwen3-8B,Quant,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,13.81
+Qwen3-8B,Quant,1024,GovReport,Summarization,Rouge-L,8734,EN,1.54
+Qwen3-8B,Quant,1024,QMSum,Summarization,Rouge-L,10614,EN,16.79
+Qwen3-8B,Quant,1024,MultiNews,Summarization,Rouge-L,2113,EN,2.99
+Qwen3-8B,Quant,1024,VCSUM,Summarization,Rouge-L,15380,ZH,1.35
+Qwen3-8B,Quant,1024,TREC,Few shot,Accuracy,5177,EN,50.5
+Qwen3-8B,Quant,1024,TriviaQA,Few shot,F1,8209,EN,54.01
+Qwen3-8B,Quant,1024,SAMSum,Few shot,Rouge-L,6258,EN,17.95
+Qwen3-8B,Quant,1024,LSHT,Few shot,Accuracy,22337,ZH,18.5
+Qwen3-8B,Quant,1024,PassageCount,Synthetic,Accuracy,11141,EN,7.08
+Qwen3-8B,Quant,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,75.14
+Qwen3-8B,Quant,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,9.33
+Qwen3-8B,Quant,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,29.1
+Qwen3-8B,Quant,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,28.21
+Qwen3-8B,Origin,1024,NarrativeQA,Single-doc QA,F1,18409,EN,3.77
+Qwen3-8B,Origin,1024,Qasper,Single-doc QA,F1,3619,EN,9.95
+Qwen3-8B,Origin,1024,MultiFieldQA-en,Single-doc QA,F1,4559,EN,24.91
+Qwen3-8B,Origin,1024,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.05
+Qwen3-8B,Origin,1024,HotpotQA,Multi-doc QA,F1,9151,EN,12.24
+Qwen3-8B,Origin,1024,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,12.19
+Qwen3-8B,Origin,1024,MuSiQue,Multi-doc QA,F1,11214,EN,7.02
+Qwen3-8B,Origin,1024,DuReader,Multi-doc QA,Rouge-L,15768,ZH,19.31
+Qwen3-8B,Origin,1024,GovReport,Summarization,Rouge-L,8734,EN,26.41
+Qwen3-8B,Origin,1024,QMSum,Summarization,Rouge-L,10614,EN,21.45
+Qwen3-8B,Origin,1024,MultiNews,Summarization,Rouge-L,2113,EN,21.98
+Qwen3-8B,Origin,1024,VCSUM,Summarization,Rouge-L,15380,ZH,14.02
+Qwen3-8B,Origin,1024,TREC,Few shot,Accuracy,5177,EN,71.5
+Qwen3-8B,Origin,1024,TriviaQA,Few shot,F1,8209,EN,90.71
+Qwen3-8B,Origin,1024,SAMSum,Few shot,Rouge-L,6258,EN,44.27
+Qwen3-8B,Origin,1024,LSHT,Few shot,Accuracy,22337,ZH,47.5
+Qwen3-8B,Origin,1024,PassageCount,Synthetic,Accuracy,11141,EN,7.68
+Qwen3-8B,Origin,1024,PassageRetr.-en,Synthetic,Accuracy,9289,EN,95.96
+Qwen3-8B,Origin,1024,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,97.1
+Qwen3-8B,Origin,1024,LCC,Code,Edit Sim,1235,Python/C#/Java,68.68
+Qwen3-8B,Origin,1024,RepoBench-P,Code,Edit Sim,4206,Python/Java,65.02
+Qwen3-8B,AKCB,2048,NarrativeQA,Single-doc QA,F1,18409,EN,3.59
+Qwen3-8B,AKCB,2048,Qasper,Single-doc QA,F1,3619,EN,10.82
+Qwen3-8B,AKCB,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,26.0
+Qwen3-8B,AKCB,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.46
+Qwen3-8B,AKCB,2048,HotpotQA,Multi-doc QA,F1,9151,EN,12.83
+Qwen3-8B,AKCB,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,12.39
+Qwen3-8B,AKCB,2048,MuSiQue,Multi-doc QA,F1,11214,EN,7.21
+Qwen3-8B,AKCB,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,20.37
+Qwen3-8B,AKCB,2048,GovReport,Summarization,Rouge-L,8734,EN,27.75
+Qwen3-8B,AKCB,2048,QMSum,Summarization,Rouge-L,10614,EN,20.92
+Qwen3-8B,AKCB,2048,MultiNews,Summarization,Rouge-L,2113,EN,22.81
+Qwen3-8B,AKCB,2048,VCSUM,Summarization,Rouge-L,15380,ZH,13.61
+Qwen3-8B,AKCB,2048,TREC,Few shot,Accuracy,5177,EN,71.5
+Qwen3-8B,AKCB,2048,TriviaQA,Few shot,F1,8209,EN,90.55
+Qwen3-8B,AKCB,2048,SAMSum,Few shot,Rouge-L,6258,EN,44.79
+Qwen3-8B,AKCB,2048,LSHT,Few shot,Accuracy,22337,ZH,47.5
+Qwen3-8B,AKCB,2048,PassageCount,Synthetic,Accuracy,11141,EN,7.53
+Qwen3-8B,AKCB,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,95.5
+Qwen3-8B,AKCB,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,97.6
+Qwen3-8B,AKCB,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,68.55
+Qwen3-8B,AKCB,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,64.62
+Qwen3-8B,Quant,2048,NarrativeQA,Single-doc QA,F1,18409,EN,2.05
+Qwen3-8B,Quant,2048,Qasper,Single-doc QA,F1,3619,EN,3.19
+Qwen3-8B,Quant,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,12.0
+Qwen3-8B,Quant,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,8.58
+Qwen3-8B,Quant,2048,HotpotQA,Multi-doc QA,F1,9151,EN,10.25
+Qwen3-8B,Quant,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,8.36
+Qwen3-8B,Quant,2048,MuSiQue,Multi-doc QA,F1,11214,EN,3.4
+Qwen3-8B,Quant,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,13.81
+Qwen3-8B,Quant,2048,GovReport,Summarization,Rouge-L,8734,EN,1.54
+Qwen3-8B,Quant,2048,QMSum,Summarization,Rouge-L,10614,EN,16.79
+Qwen3-8B,Quant,2048,MultiNews,Summarization,Rouge-L,2113,EN,11.51
+Qwen3-8B,Quant,2048,VCSUM,Summarization,Rouge-L,15380,ZH,1.53
+Qwen3-8B,Quant,2048,TREC,Few shot,Accuracy,5177,EN,50.5
+Qwen3-8B,Quant,2048,TriviaQA,Few shot,F1,8209,EN,54.17
+Qwen3-8B,Quant,2048,SAMSum,Few shot,Rouge-L,6258,EN,18.59
+Qwen3-8B,Quant,2048,LSHT,Few shot,Accuracy,22337,ZH,18.5
+Qwen3-8B,Quant,2048,PassageCount,Synthetic,Accuracy,11141,EN,7.08
+Qwen3-8B,Quant,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,75.14
+Qwen3-8B,Quant,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,9.33
+Qwen3-8B,Quant,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,42.43
+Qwen3-8B,Quant,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,28.21
+Qwen3-8B,Origin,2048,NarrativeQA,Single-doc QA,F1,18409,EN,3.71
+Qwen3-8B,Origin,2048,Qasper,Single-doc QA,F1,3619,EN,11.0
+Qwen3-8B,Origin,2048,MultiFieldQA-en,Single-doc QA,F1,4559,EN,25.07
+Qwen3-8B,Origin,2048,MultiFieldQA-zh,Single-doc QA,F1,6701,ZH,20.84
+Qwen3-8B,Origin,2048,HotpotQA,Multi-doc QA,F1,9151,EN,12.55
+Qwen3-8B,Origin,2048,2WikiMultihopQA,Multi-doc QA,F1,4887,EN,12.95
+Qwen3-8B,Origin,2048,MuSiQue,Multi-doc QA,F1,11214,EN,7.37
+Qwen3-8B,Origin,2048,DuReader,Multi-doc QA,Rouge-L,15768,ZH,19.98
+Qwen3-8B,Origin,2048,GovReport,Summarization,Rouge-L,8734,EN,27.63
+Qwen3-8B,Origin,2048,QMSum,Summarization,Rouge-L,10614,EN,21.38
+Qwen3-8B,Origin,2048,MultiNews,Summarization,Rouge-L,2113,EN,22.78
+Qwen3-8B,Origin,2048,VCSUM,Summarization,Rouge-L,15380,ZH,14.02
+Qwen3-8B,Origin,2048,TREC,Few shot,Accuracy,5177,EN,71.5
+Qwen3-8B,Origin,2048,TriviaQA,Few shot,F1,8209,EN,90.71
+Qwen3-8B,Origin,2048,SAMSum,Few shot,Rouge-L,6258,EN,44.47
+Qwen3-8B,Origin,2048,LSHT,Few shot,Accuracy,22337,ZH,47.5
+Qwen3-8B,Origin,2048,PassageCount,Synthetic,Accuracy,11141,EN,7.3
+Qwen3-8B,Origin,2048,PassageRetr.-en,Synthetic,Accuracy,9289,EN,95.37
+Qwen3-8B,Origin,2048,PassageRetr.-zh,Synthetic,Accuracy,6745,ZH,97.6
+Qwen3-8B,Origin,2048,LCC,Code,Edit Sim,1235,Python/C#/Java,68.69
+Qwen3-8B,Origin,2048,RepoBench-P,Code,Edit Sim,4206,Python/Java,65.07

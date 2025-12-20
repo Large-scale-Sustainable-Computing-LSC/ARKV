@@ -9,6 +9,10 @@ dependencies:
   # Python
   - python=3.10
 
+  # Build / packaging tools (needed for editable installs)
+  - setuptools
+  - wheel
+
   # Core ML/DL frameworks
   - pytorch>=2.0.0
   - pytorch-cuda=11.8
@@ -29,6 +33,9 @@ dependencies:
       
       # Evaluation frameworks
       - lm-eval>=0.4.0
+
+      # Hyperparameter tuning
+      - optuna>=3.0.0
       
       # Metrics and evaluation
       - rouge>=1.0.1

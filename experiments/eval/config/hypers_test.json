@@ -1,0 +1,16 @@
+{
+    "meta-llama/Llama-3.2-3B-Instruct": {
+        "model": "meta-llama/Llama-3.2-3B-Instruct",
+        "hypers":[
+            {
+                "cache_size": 512,
+                "window_size": 32,
+                "tau1": 8.994,
+                "tau2": 9.370,
+                "tau3": 2.258,
+                "gamma": 107.298
+            }
+            
+        ]
+    }
+}
