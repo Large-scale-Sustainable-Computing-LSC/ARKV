@@ -3,8 +3,8 @@ import torch.nn.functional as F
 from torch import nn
 from transformers.cache_utils import DynamicCache, Cache, HybridCache, CacheLayerMixin
 from typing import Any, Dict, List, Optional, Tuple, Union
-from akcb.config import ADCacheConfig
-from akcb.calculator import adjust_budgets, append_new_indices, build_unified_positions, calculate_heavy_hitter, dequantize_fp8, heads_diff, heads_union, quantize_fp8_tensor
+from arkv.config import ADCacheConfig
+from arkv.calculator import adjust_budgets, append_new_indices, build_unified_positions, calculate_heavy_hitter, dequantize_fp8, heads_diff, heads_union, quantize_fp8_tensor
 
 
 class WindowLayer(CacheLayerMixin):
@@ -306,7 +306,7 @@ class WindowCache(Cache):
     def log_state(self, place, logging=False, logging_place=False):
         if not logging_place:
             return
-        print(f"[JLE] WindowCache at {place}: {len(self)} layers")
+        print(f"[ARKV] WindowCache at {place}: {len(self)} layers")
         if not logging:
             return
         for i in range(len(self)):
@@ -328,7 +328,7 @@ class WindowPrefillKVCompressor:
 
         
     def __call__(self, past_key_values, seq_len):
-        # print(f"[JLE] MixPrefillKVCache: total_size {self.total_size}, window_size {self.window_size}, seq_len {seq_len}")
+        # print(f"[ARKV] MixPrefillKVCache: total_size {self.total_size}, window_size {self.window_size}, seq_len {seq_len}")
         # If context is not longer than cache_size + window, nothing to do.
 
         # Per-layer total budget is identical.
@@ -337,7 +337,7 @@ class WindowPrefillKVCompressor:
 
         # Preference scores per layer. Use the max to normalize into [0, 1].
         pref_scores = past_key_values.pref_scores
-        # print(f"[JLE] MixPrefillKVCache: pref_scores {[s.item() for s in pref_scores]}")
+        # print(f"[ARKV] MixPrefillKVCache: pref_scores {[s.item() for s in pref_scores]}")
         max_pref = max(pref_scores) if len(pref_scores) > 0 else 0.0
 
         # Compute per-layer origin budgets for the PAST part (exclude window).
@@ -378,7 +378,7 @@ class WindowPrefillKVCompressor:
         return past_key_values
 
     def evict_layer_kvcache(self, past_key_values: WindowCache, layer_idx: int, layer_budget: int):
-        # print(f"[JLE] MixPrefillKVCache: evict layer {layer_idx} with layer_budget:{layer_budget}")
+        # print(f"[ARKV] MixPrefillKVCache: evict layer {layer_idx} with layer_budget:{layer_budget}")
         # o_len = past_key_values.get_seq_length(layer_idx)
         # if o_len <= self.cache_size:
         #     return past_key_values
@@ -437,7 +437,7 @@ class WindowDecodingKVCompressorLayerWise:
 
     @torch.no_grad()
     def __call__(self, past_key_values: "WindowCache", attn_score: torch.Tensor, layer_idx: int):
-        # print(f"[JLE] MixDecodingKVCache_LayerWise: layer {layer_idx}")
+        # print(f"[ARKV] MixDecodingKVCache_LayerWise: layer {layer_idx}")
         """
         Quant+Evict (simple): keep last window as origin; from past keep top-hh_size by importance;
         split kept past into {origin, quant} by origin_ratio; store K/V and final positions via

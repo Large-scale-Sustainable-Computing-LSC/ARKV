@@ -2,12 +2,12 @@ from typing import Optional
 
 from transformers import DynamicCache
 
-from akcb.cache.window_cache import WindowCache, WindowDecodingKVCompressorLayerWise, WindowPrefillKVCompressor
-from akcb.config import ADCacheConfig
+from arkv.cache.window_cache import WindowCache, WindowDecodingKVCompressorLayerWise, WindowPrefillKVCompressor
+from arkv.config import ADCacheConfig
 
-from akcb.cache.mix_cache import MixCache, MixDecodingKVCompressorLayerWise, MixPrefillKVCompressor
-from akcb.cache.origin_cache import OriginCache, OriginDecodingKVCompressorLayerWise, OriginPrefillKVCompressor
-from akcb.cache.quant_cache import QuantCache, QuantDecodingKVCompressorLayerWise, QuantPrefillKVCompressor
+from arkv.cache.mix_cache import MixCache, MixDecodingKVCompressorLayerWise, MixPrefillKVCompressor
+from arkv.cache.origin_cache import OriginCache, OriginDecodingKVCompressorLayerWise, OriginPrefillKVCompressor
+from arkv.cache.quant_cache import QuantCache, QuantDecodingKVCompressorLayerWise, QuantPrefillKVCompressor
 
 
 

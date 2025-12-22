@@ -14,7 +14,7 @@ import lm_eval.evaluator as evaluator
 from lm_eval import tasks
 
 # === Your config class ===
-from akcb.config import ADCacheConfig
+from arkv.config import ADCacheConfig
 
 # ----------------------------
 # Utility: metric aggregation (pick one “primary metric” per task, then average)
@@ -67,10 +67,10 @@ def initialize_my_model(cache_config: ADCacheConfig, model_arg_string: str):
     # Keep the same heuristic as before: model arg string contains "Llama-3" or "Qwen3"
     if cache_config.compress:
         if "Llama-3" in model_arg_string:
-            from akcb.model.modle_llama import replace_llama3_attn
+            from arkv.model.modle_llama import replace_llama3_attn
             replace_llama3_attn()
         elif "Qwen3" in model_arg_string:
-            from akcb.model.modify_qwen3 import replace_qwen3_attn
+            from arkv.model.modify_qwen3 import replace_qwen3_attn
             replace_qwen3_attn()
 
 # ----------------------------

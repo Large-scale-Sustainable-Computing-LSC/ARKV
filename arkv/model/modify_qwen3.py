@@ -12,25 +12,25 @@ from transformers.utils.generic import check_model_inputs
 from transformers.processing_utils import Unpack
 from transformers.utils import TransformersKwargs
 from transformers.modeling_outputs import BaseModelOutputWithPast
-from transformers.masking_utils import create_causal_mask
-from transformers.models.llama.modeling_llama import (
+from transformers.masking_utils import create_causal_mask, create_sliding_window_causal_mask
+from transformers.models.qwen3.modeling_qwen3 import (
     apply_rotary_pos_emb,
     repeat_kv,
     ALL_ATTENTION_FUNCTIONS,
     eager_attention_forward,
 )
 
-from akcb.cache.adaptive_cache import AdaptiveCache
+from arkv.cache.adaptive_cache import AdaptiveCache
 
-from akcb.calculator import calculate_heavy_hitter, disp_var_kurt_preference
+from arkv.calculator import calculate_heavy_hitter, disp_var_kurt_preference
 
-def replace_llama3_attn():
-    transformers.models.llama.modeling_llama.LlamaModel.forward = llama_model_forward
-    transformers.models.llama.modeling_llama.LlamaAttention.forward = llama_attention_forward
-    
+def replace_qwen3_attn():
+    transformers.models.qwen3.modeling_qwen3.Qwen3Model.forward = qwen3_model_forward
+    transformers.models.qwen3.modeling_qwen3.Qwen3Attention.forward = qwen3_attention_forward
+
 
 @deprecate_kwarg("past_key_value", new_name="past_key_values", version="4.58")
-def llama_attention_forward(
+def qwen3_attention_forward(
     self,
     hidden_states: torch.Tensor,
     position_embeddings: tuple[torch.Tensor, torch.Tensor],
@@ -46,8 +46,8 @@ def llama_attention_forward(
     input_shape = hidden_states.shape[:-1]
     hidden_shape = (*input_shape, -1, self.head_dim)
 
-    query_states = self.q_proj(hidden_states).view(hidden_shape).transpose(1, 2)
-    key_states = self.k_proj(hidden_states).view(hidden_shape).transpose(1, 2)
+    query_states = self.q_norm(self.q_proj(hidden_states).view(hidden_shape)).transpose(1, 2)
+    key_states = self.k_norm(self.k_proj(hidden_states).view(hidden_shape)).transpose(1, 2)
     value_states = self.v_proj(hidden_states).view(hidden_shape).transpose(1, 2)
 
     cos, sin = position_embeddings
@@ -57,13 +57,11 @@ def llama_attention_forward(
         # sin and cos are specific to RoPE models; cache_position needed for the static cache
         cache_kwargs = {"sin": sin, "cos": cos, "cache_position": cache_position}
         key_states, value_states = past_key_values.update(key_states, value_states, self.layer_idx, cache_kwargs)
-    
-    
+
     key_test = repeat_kv(key_states, self.num_key_value_groups)
     bsz, q_len, _ = hidden_states.size()
     tmp_size = min(q_len, cache_config.window_size)
     if cache_config.prefill[self.layer_idx]:
-
         tmp_attn_weights = torch.matmul(query_states[..., -tmp_size:, :], key_test.transpose(2, 3)) / math.sqrt(self.head_dim)
 
         if q_len !=1:
@@ -139,22 +137,23 @@ def llama_attention_forward(
 
 @check_model_inputs
 # @auto_docstring
-def llama_model_forward(
+def qwen3_model_forward(
     self,
     input_ids: Optional[torch.LongTensor] = None,
     attention_mask: Optional[torch.Tensor] = None,
     position_ids: Optional[torch.LongTensor] = None,
     past_key_values: Optional[Cache] = None,
     inputs_embeds: Optional[torch.FloatTensor] = None,
-    cache_position: Optional[torch.LongTensor] = None,
     use_cache: Optional[bool] = None,
+    cache_position: Optional[torch.LongTensor] = None,
     **kwargs: Unpack[TransformersKwargs],
 ) -> BaseModelOutputWithPast:
     if (input_ids is None) ^ (inputs_embeds is not None):
         raise ValueError("You must specify exactly one of input_ids or inputs_embeds")
 
     if inputs_embeds is None:
-        inputs_embeds: torch.Tensor = self.embed_tokens(input_ids)
+        inputs_embeds = self.embed_tokens(input_ids)
+
     if use_cache and past_key_values is None:
         dynamicCache = DynamicCache(config=self.config)
         cache_config = self.config.cache_config
@@ -167,33 +166,47 @@ def llama_model_forward(
         ad_cache = AdaptiveCache(cache_config)
         past_key_values = ad_cache.cache().from_dynamic_cache(past_key_values)
 
+
     if cache_position is None:
         past_seen_tokens = past_key_values.get_seq_length() if past_key_values is not None else 0
-        cache_position: torch.Tensor = torch.arange(
+        cache_position = torch.arange(
             past_seen_tokens, past_seen_tokens + inputs_embeds.shape[1], device=inputs_embeds.device
         )
 
     if position_ids is None:
         position_ids = cache_position.unsqueeze(0)
 
-    causal_mask = create_causal_mask(
-        config=self.config,
-        input_embeds=inputs_embeds,
-        attention_mask=attention_mask,
-        cache_position=cache_position,
-        past_key_values=past_key_values,
-        position_ids=position_ids,
-    )
+    # It may already have been prepared by e.g. `generate`
+    if not isinstance(causal_mask_mapping := attention_mask, dict):
+        # Prepare mask arguments
+        mask_kwargs = {
+            "config": self.config,
+            "input_embeds": inputs_embeds,
+            "attention_mask": attention_mask,
+            "cache_position": cache_position,
+            "past_key_values": past_key_values,
+            "position_ids": position_ids,
+        }
+        # Create the masks
+        causal_mask_mapping = {
+            "full_attention": create_causal_mask(**mask_kwargs),
+        }
+        # The sliding window alternating layers are not always activated depending on the config
+        if self.has_sliding_layers:
+            causal_mask_mapping["sliding_attention"] = create_sliding_window_causal_mask(**mask_kwargs)
 
     hidden_states = inputs_embeds
+
+    # create position embeddings to be shared across the decoder layers
     position_embeddings = self.rotary_emb(hidden_states, position_ids)
 
     for decoder_layer in self.layers[: self.config.num_hidden_layers]:
         hidden_states = decoder_layer(
             hidden_states,
-            attention_mask=causal_mask,
+            attention_mask=causal_mask_mapping[decoder_layer.attention_type],
             position_ids=position_ids,
             past_key_values=past_key_values,
+            use_cache=use_cache,
             cache_position=cache_position,
             position_embeddings=position_embeddings,
             **kwargs,
@@ -202,7 +215,7 @@ def llama_model_forward(
     hidden_states = self.norm(hidden_states)
     return BaseModelOutputWithPast(
         last_hidden_state=hidden_states,
-        past_key_values=past_key_values,
+        past_key_values=past_key_values if use_cache else None,
     )
 
 

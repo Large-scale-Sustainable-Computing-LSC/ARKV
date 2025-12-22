@@ -3,8 +3,8 @@ import torch.nn.functional as F
 from torch import nn
 from transformers.cache_utils import DynamicCache, Cache, HybridCache, CacheLayerMixin
 from typing import Any, Dict, List, Optional, Tuple, Union
-from akcb.config import ADCacheConfig
-from akcb.calculator import adjust_budgets, append_new_indices, build_unified_positions, calculate_heavy_hitter, dequantize_tensor, quantize_tensor
+from arkv.config import ADCacheConfig
+from arkv.calculator import adjust_budgets, append_new_indices, build_unified_positions, calculate_heavy_hitter, dequantize_tensor, quantize_tensor
 
 
 class QuantLayer(CacheLayerMixin):
@@ -179,9 +179,9 @@ class QuantLayer(CacheLayerMixin):
         if self.origin_keys is None or self.origin_keys.numel() == 0:
             return 0
         o_len = self.origin_keys.shape[-2]
-        # print(f"[JLE] MixCache: get_seq_length layer {layer_idx} origin length {o_len}")
+        # print(f"[ARKV] MixCache: get_seq_length layer {layer_idx} origin length {o_len}")
         if self.quant_keys is not None:
-            # print(f"[JLE] MixCache: get_seq_length layer {layer_idx} quant length {self.quant_key_cache[layer_idx].shape[-2]}")
+            # print(f"[ARKV] MixCache: get_seq_length layer {layer_idx} quant length {self.quant_key_cache[layer_idx].shape[-2]}")
             o_len += self.quant_keys.shape[-2]
         return o_len
 
@@ -194,7 +194,7 @@ class QuantLayer(CacheLayerMixin):
         Crop the past key values up to a new `max_length` in terms of tokens. `max_length` can also be negative
         to remove `max_length` tokens.
         """
-        print(f"[JLE] MixCache: crop to max_length {max_length}")
+        print(f"[ARKV] MixCache: crop to max_length {max_length}")
         if max_length < 0:
             max_length = self.get_seq_length() - abs(max_length)
 
@@ -214,7 +214,7 @@ class QuantLayer(CacheLayerMixin):
 
     def batch_repeat_interleave(self, repeats: int) -> None:
         """Repeat the cache `repeats` times in the batch dimension."""
-        print(f"[JLE] MixCache: batch_repeat_interleave by {repeats}")
+        print(f"[ARKV] MixCache: batch_repeat_interleave by {repeats}")
         key_states, value_states = self.get_kv_cache()
         if key_states.numel() > 0:
             key_states = key_states.repeat_interleave(repeats, dim=0)
@@ -230,7 +230,7 @@ class QuantLayer(CacheLayerMixin):
         
     def batch_select_indices(self, indices: torch.Tensor) -> None:
         """Only keep the `indices` in the batch dimension of the cache."""
-        print(f"[JLE] MixCache: batch_select_indices {indices}")
+        print(f"[ARKV] MixCache: batch_select_indices {indices}")
         key_states, value_states = self.get_kv_cache()
         if key_states.numel() > 0:
             key_states = key_states[indices, ...]
@@ -388,7 +388,7 @@ class QuantCache(Cache):
     def log_state(self, place, logging=False, logging_place=False):
         if not logging_place:
             return
-        print(f"[JLE] QuantCache at {place}: {len(self)} layers")
+        print(f"[ARKV] QuantCache at {place}: {len(self)} layers")
         if not logging:
             return
         for i in range(len(self)):
@@ -417,7 +417,7 @@ class QuantPrefillKVCompressor:
         self.cache_size = cache_config.cache_size
 
     def __call__(self, past_key_values, seq_len):
-        # print(f"[JLE] MixPrefillKVCache: total_size {self.total_size}, window_size {self.window_size}, seq_len {seq_len}")
+        # print(f"[ARKV] MixPrefillKVCache: total_size {self.total_size}, window_size {self.window_size}, seq_len {seq_len}")
         # If context is not longer than cache_size + window, nothing to do.
 
         # Per-layer total budget is identical.
@@ -427,7 +427,7 @@ class QuantPrefillKVCompressor:
 
         # Preference scores per layer. Use the max to normalize into [0, 1].
         pref_scores = past_key_values.pref_scores
-        # print(f"[JLE] MixPrefillKVCache: pref_scores {[s.item() for s in pref_scores]}")
+        # print(f"[ARKV] MixPrefillKVCache: pref_scores {[s.item() for s in pref_scores]}")
         max_pref = max(pref_scores) if len(pref_scores) > 0 else 0.0
 
         # Compute per-layer origin budgets for the PAST part (exclude window).
@@ -468,7 +468,7 @@ class QuantPrefillKVCompressor:
         return past_key_values
 
     def evict_layer_kvcache(self, past_key_values: QuantCache, layer_idx: int, layer_budget: int):
-        # print(f"[JLE] MixPrefillKVCache: evict layer {layer_idx} with layer_budget:{layer_budget}")
+        # print(f"[ARKV] MixPrefillKVCache: evict layer {layer_idx} with layer_budget:{layer_budget}")
         layer = past_key_values.layers[layer_idx]
         origin_keys, origin_values = layer.origin_keys, layer.origin_values
         B, H, o_len, D = origin_keys.shape
@@ -533,7 +533,7 @@ class QuantDecodingKVCompressorLayerWise:
 
     @torch.no_grad()
     def __call__(self, past_key_values: "QuantCache", attn_score: torch.Tensor, layer_idx: int):
-        # print(f"[JLE] MixDecodingKVCache_LayerWise: layer {layer_idx}")
+        # print(f"[ARKV] MixDecodingKVCache_LayerWise: layer {layer_idx}")
         """
         Quant+Evict (simple): keep last window as origin; from past keep top-hh_size by importance;
         split kept past into {origin, quant} by origin_ratio; store K/V and final positions via

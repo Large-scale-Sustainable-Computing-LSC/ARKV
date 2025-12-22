@@ -1,9 +1,9 @@
-# AKCB: Adaptive and Resource-Efficient KV Cache Management under Limited Memory Budget for Long-Context Inference in LLMs
+# ARKV: Adaptive and Resource-Efficient KV Cache Management under Limited Memory Budget for Long-Context Inference in LLMs
 
-The high-level overview of the AKCB framework is as follows:
-![System Model](figures/akcb_framework.png)
+The high-level overview of the ARKV framework is as follows:
+![System Model](figures/arkv_framework.png)
 
-AKCB consists of three key components: (1) Per-layer Original Quantization (OQ) ratio estimation to determine each layer’s compression sensitivity, (2) Token importance scoring based on online attention statistics, and (3) Tri-state cache assignment to fit a memory budget via selective precision control. 
+ARKV consists of three key components: (1) Per-layer Original Quantization (OQ) ratio estimation to determine each layer’s compression sensitivity, (2) Token importance scoring based on online attention statistics, and (3) Tri-state cache assignment to fit a memory budget via selective precision control. 
 
 * Prefill phase: Each layer’s Origin budget is determined by an OQ score combining entropy, variance, and kurtosis of attention distributions. These scores are normalized into an OQ ratio, ensuring the limited cache budget is fairly distributed across layers.
 * Decoding phase: At each step, hh scores are computed only on the evictable region $[0 : K − W)$. A keep set is selected, then divided into Original and Quantization according to the budget, with the remainder evicted. The most recent W , the window protection region, tokens are always retained in Original.
@@ -11,7 +11,7 @@ AKCB consists of three key components: (1) Per-layer Original Quantization (OQ) 
 
 # Abstract
 
-Large Language Models (LLMs) are increasingly deployed in scenarios demanding ultra-long context reasoning, such as agentic workflows and deep research understanding. However, long-context inference is constrained by the KV cache, a transient memory structure that grows linearly with sequence length and batch size, quickly dominating GPU memory usage. Existing memory reduction techniques, including eviction and quantization, often rely on static heuristics and suffer from degraded quality under tight budgets. In this paper, we propose AKCB, a lightweight and adaptive framework that dynamically allocates precision levels to cached tokens based on per-layer attention dynamics and token-level importance. During a short prefill phase, AKCB estimates the original quantization (OQ) ratio of each layer by computing statistical scores such as attention entropy, variance and kurtosis. During decoding, tokens are assigned to one of three states—Original (full precision), Quantization (low precision), or Eviction—according to a fast heavy-hitter scoring strategy. Our experiments on LLaMA3 and Qwen3 models across diverse long- and short-context tasks demonstrate that AKCB preserves $\sim$97\% of baseline accuracy on long-context benchmarks while reducing KV memory usage by 4$\times$, with minimal throughput loss. On short-context tasks, AKCB matches full-precision baselines; on GSM8K math reasoning, it significantly outperforms uniform quantization. These results highlight the practical viability of AKCB for scalable LLM deployment, offering fine-grained, data-driven memory control without retraining or architectural modifications.
+Large Language Models (LLMs) are increasingly deployed in scenarios demanding ultra-long context reasoning, such as agentic workflows and deep research understanding. However, long-context inference is constrained by the KV cache, a transient memory structure that grows linearly with sequence length and batch size, quickly dominating GPU memory usage. Existing memory reduction techniques, including eviction and quantization, often rely on static heuristics and suffer from degraded quality under tight budgets. In this paper, we propose ARKV, a lightweight and adaptive framework that dynamically allocates precision levels to cached tokens based on per-layer attention dynamics and token-level importance. During a short prefill phase, ARKV estimates the original quantization (OQ) ratio of each layer by computing statistical scores such as attention entropy, variance and kurtosis. During decoding, tokens are assigned to one of three states—Original (full precision), Quantization (low precision), or Eviction—according to a fast heavy-hitter scoring strategy. Our experiments on LLaMA3 and Qwen3 models across diverse long- and short-context tasks demonstrate that ARKV preserves $\sim$97\% of baseline accuracy on long-context benchmarks while reducing KV memory usage by 4$\times$, with minimal throughput loss. On short-context tasks, ARKV matches full-precision baselines; on GSM8K math reasoning, it significantly outperforms uniform quantization. These results highlight the practical viability of ARKV for scalable LLM deployment, offering fine-grained, data-driven memory control without retraining or architectural modifications.
 
 # Dependencies
 
@@ -54,7 +54,7 @@ The recommended way to set up a runnable environment is to use the provided setu
 
 ```bash
 ./scripts/setup_env.sh
-conda activate akcb
+conda activate arkv
 ```
 
 ## Using an exported env spec (optional)
@@ -67,10 +67,10 @@ use it directly:
 ```
 
 If the export uses a different environment name (e.g., `name: adkv`) but you want to create/update
-the `akcb` environment, pass `--name`:
+the `arkv` environment, pass `--name`:
 
 ```bash
-./scripts/setup_env.sh --file env.txt --name akcb
+./scripts/setup_env.sh --file env.txt --name arkv
 ```
 
 Note: conda exports sometimes include a machine-specific `prefix:` entry. The setup script strips
@@ -78,20 +78,20 @@ that line automatically to keep the environment spec portable.
 
 # Repository Structure
 
-This repository is organized around the AKCB runtime pipeline (config → attention patching → prefill scoring → decoding compression), plus an experiments folder for evaluation and analysis.
+This repository is organized around the ARKV runtime pipeline (config → attention patching → prefill scoring → decoding compression), plus an experiments folder for evaluation and analysis.
 
 
-## Core package: `akcb/`
+## Core package: `arkv/`
 
-- `akcb/config.py`
+- `arkv/config.py`
 	- Defines `ADCacheConfig`, the central runtime configuration (cache size, window size, `tau1/tau2/tau3`, `gamma`, cache type).
 	- Initializes per-layer state such as `prefill` flags and `decoding_compressor` handles.
 
-- `akcb/calculator.py`
+- `arkv/calculator.py`
 	- Prefill-time statistics used to estimate layer sensitivity / OQ preference (entropy, variance, kurtosis).
 	- Decoding-time token importance utilities such as heavy-hitter scoring.
 
-- `akcb/cache/`
+- `arkv/cache/`
 	- Cache implementations and compressors.
 	- `adaptive_cache.py`: a small factory that selects the cache/compressor classes based on `quant_type`.
 	- `origin_cache.py`: baseline full-precision cache path.
@@ -102,9 +102,9 @@ This repository is organized around the AKCB runtime pipeline (config → attent
 		- **Prefill compressor**: builds the initial compressed cache after prompt prefill.
 		- **Decoding compressor (layer-wise)**: updates and compresses cache incrementally per decoding step.
 
-- `akcb/model/`
+- `arkv/model/`
 	- HuggingFace Transformers integration points.
-	- `modle_llama.py`: patches Llama attention forward to run AKCB logic (prefill scoring + decoding compression) while staying API-compatible with Transformers.
+	- `modle_llama.py`: patches Llama attention forward to run ARKV logic (prefill scoring + decoding compression) while staying API-compatible with Transformers.
 	- `modify_qwen3.py`: analogous patch for Qwen3.
 
 ## Experiments: `experiments/`
@@ -128,7 +128,7 @@ The `experiments/` directory contains scripts and notebooks used to reproduce ev
 After environment setup:
 
 ```bash
-conda activate akcb
+conda activate arkv
 ```
 
 Run lm-eval evaluation (example):

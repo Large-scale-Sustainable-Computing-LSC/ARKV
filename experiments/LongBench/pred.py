@@ -12,7 +12,7 @@ import argparse
 import torch.distributed as dist
 import torch.multiprocessing as mp
 
-from akcb.config import ADCacheConfig
+from arkv.config import ADCacheConfig
 
 def parse_args(args=None):
     parser = argparse.ArgumentParser()
@@ -156,11 +156,11 @@ def seed_everything(seed):
 def load_model_and_tokenizer(path, model_name, device, cache_config):
     if cache_config.compress:
         if "Llama-3" in model_name:
-            from akcb.model.modle_llama import replace_llama3_attn
+            from arkv.model.modle_llama import replace_llama3_attn
             print("======== llama3 replace flashllama attn ========")
             replace_llama3_attn()
         elif "Qwen3" in model_name:
-            from akcb.model.modify_qwen3 import replace_qwen3_attn
+            from arkv.model.modify_qwen3 import replace_qwen3_attn
             print("======== qwen3 replace flashllama attn ========")
             replace_qwen3_attn()
         # tokenizer = LlamaTokenizer.from_pretrained(path)

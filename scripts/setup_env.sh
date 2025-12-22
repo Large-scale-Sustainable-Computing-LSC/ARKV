@@ -58,7 +58,7 @@ if [[ ! -f "$ENV_FILE" ]]; then
 fi
 
 # Some conda exports include a 'prefix:' line, which can make env creation non-portable.
-TMP_ENV_FILE="$(mktemp -t akcb-env-XXXXXX.yml)"
+TMP_ENV_FILE="$(mktemp -t arkv-env-XXXXXX.yml)"
 cleanup() { rm -f "$TMP_ENV_FILE"; }
 trap cleanup EXIT
 
@@ -74,7 +74,7 @@ fi
 echo "[setup] Creating/updating conda env: ${ENV_NAME}"
 conda env update -n "$ENV_NAME" -f "$TMP_ENV_FILE" --prune || conda env create -n "$ENV_NAME" -f "$TMP_ENV_FILE"
 
-echo "[setup] Installing AKCB in editable mode (pip -e)"
+echo "[setup] Installing ARKV in editable mode (pip -e)"
 conda run -n "$ENV_NAME" python -m pip install --upgrade pip
 conda run -n "$ENV_NAME" python -m pip install -e .
 

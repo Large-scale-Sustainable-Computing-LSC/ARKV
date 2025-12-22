@@ -22,7 +22,7 @@ import lm_eval.evaluator as evaluator
 from lm_eval import tasks
 
 # === ADKV configuration ===
-from akcb.config import ADCacheConfig
+from arkv.config import ADCacheConfig
 
 def flatten_task_dict(task_dict):
     """Flatten a task structure into a {task_name: Task} dict."""
@@ -102,11 +102,11 @@ def build_task_limits(flat_task_dict: Dict[str, Any], sampling_ratio: float, def
 def initialize_my_model(cache_config: ADCacheConfig, model_arg_string: str):
     if cache_config.compress:
         if "Llama-3" in model_arg_string or "Meta-Llama-3" in model_arg_string:
-            from akcb.model.modle_llama import replace_llama3_attn
+            from arkv.model.modle_llama import replace_llama3_attn
             print("[ADKV] replace_llama3_attn()")
             replace_llama3_attn()
         elif "Qwen3" in model_arg_string or "Qwen/" in model_arg_string:
-            from akcb.model.modify_qwen3 import replace_qwen3_attn
+            from arkv.model.modify_qwen3 import replace_qwen3_attn
             print("[ADKV] replace_qwen3_attn()")
             replace_qwen3_attn()
 

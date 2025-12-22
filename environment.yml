@@ -1,4 +1,4 @@
-name: akcb
+name: arkv
 channels:
   - pytorch
   - nvidia
